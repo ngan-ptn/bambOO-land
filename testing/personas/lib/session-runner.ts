@@ -17,7 +17,7 @@ import type {
   FrictionPoint
 } from "./types.js";
 
-const TESTING_DIR = "/Users/nganpham/nutrition-experiments/testing";
+const TESTING_DIR = "/Users/nganpham/bambOO-land/testing";
 const PERSONAS_DIR = `${TESTING_DIR}/personas`;
 const SCREENSHOTS_DIR = `${TESTING_DIR}/screenshots`;
 const APP_URL = "http://localhost:3000";

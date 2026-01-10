@@ -1,4 +1,4 @@
-# Nutrition Experiments
+# bambOO-land
 
 A monorepo for exploring different approaches to nutrition/health tracking through iterative prototyping.
 
@@ -26,16 +26,16 @@ npm run dev
 
 # Run persona tests
 cd ~/.claude/skills/dev-browser/skills/dev-browser
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/test-template.ts
+npx tsx /Users/nganpham/bambOO-land/testing/personas/test-template.ts
 
 # Generate reports
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/lib/cli.ts reports
+npx tsx /Users/nganpham/bambOO-land/testing/personas/lib/cli.ts reports
 ```
 
 ## Repository Structure
 
 ```
-nutrition-experiments/
+bambOO-land/
 ├── prototypes/                 # Individual prototype apps
 │   └── 01-fuelup/             # Partner streaks approach
 │       ├── src/

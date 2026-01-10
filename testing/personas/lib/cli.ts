@@ -25,7 +25,7 @@ import {
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-const PERSONAS_DIR = "/Users/nganpham/nutrition-experiments/testing/personas";
+const PERSONAS_DIR = "/Users/nganpham/bambOO-land/testing/personas";
 
 function showStatus() {
   const profilesDir = path.join(PERSONAS_DIR, "profiles");

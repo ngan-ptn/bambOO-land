@@ -21,7 +21,7 @@ Quick reference for running persona simulations on prototypes.
 
 ```bash
 # Terminal 1: Prototype (from prototype directory)
-cd /Users/nganpham/nutrition-experiments/prototypes/01-fuelup
+cd /Users/nganpham/bambOO-land/prototypes/01-fuelup
 npm run dev
 # Runs on http://localhost:3000
 
@@ -36,30 +36,30 @@ npm run start-server
 **Option A: Run all personas**
 ```bash
 cd ~/.claude/skills/dev-browser/skills/dev-browser
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/test-template.ts
+npx tsx /Users/nganpham/bambOO-land/testing/personas/test-template.ts
 ```
 
 **Option B: Run single persona**
 ```bash
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/test-template.ts --persona=linh-nguyen
+npx tsx /Users/nganpham/bambOO-land/testing/personas/test-template.ts --persona=linh-nguyen
 ```
 
 **Option C: Fresh state (new user)**
 ```bash
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/test-template.ts --clear
+npx tsx /Users/nganpham/bambOO-land/testing/personas/test-template.ts --clear
 ```
 
 ### 3. View Results
 
 ```bash
 # Quick status
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/lib/cli.ts status
+npx tsx /Users/nganpham/bambOO-land/testing/personas/lib/cli.ts status
 
 # Generate reports
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/lib/cli.ts reports
+npx tsx /Users/nganpham/bambOO-land/testing/personas/lib/cli.ts reports
 
 # View reports
-cat /Users/nganpham/nutrition-experiments/testing/personas/findings/by-persona/linh-nguyen-journey.md
+cat /Users/nganpham/bambOO-land/testing/personas/findings/by-persona/linh-nguyen-journey.md
 ```
 
 ---
@@ -76,10 +76,10 @@ cp testing/personas/test-template.ts testing/personas/test-<feature-name>.ts
 
 # 3. Run
 cd ~/.claude/skills/dev-browser/skills/dev-browser
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/test-<feature-name>.ts
+npx tsx /Users/nganpham/bambOO-land/testing/personas/test-<feature-name>.ts
 
 # 4. Generate reports
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/lib/cli.ts reports
+npx tsx /Users/nganpham/bambOO-land/testing/personas/lib/cli.ts reports
 ```
 
 ---
@@ -91,19 +91,19 @@ npx tsx /Users/nganpham/nutrition-experiments/testing/personas/lib/cli.ts report
 cd ~/.claude/skills/dev-browser/skills/dev-browser
 
 # Status overview
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/lib/cli.ts status
+npx tsx /Users/nganpham/bambOO-land/testing/personas/lib/cli.ts status
 
 # Generate all reports
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/lib/cli.ts reports
+npx tsx /Users/nganpham/bambOO-land/testing/personas/lib/cli.ts reports
 
 # Single persona journey
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/lib/cli.ts journey linh-nguyen
+npx tsx /Users/nganpham/bambOO-land/testing/personas/lib/cli.ts journey linh-nguyen
 
 # Feature report
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/lib/cli.ts feature ai-scan
+npx tsx /Users/nganpham/bambOO-land/testing/personas/lib/cli.ts feature ai-scan
 
 # Mark friction resolved
-npx tsx /Users/nganpham/nutrition-experiments/testing/personas/lib/cli.ts resolve khoa-pham "search bar"
+npx tsx /Users/nganpham/bambOO-land/testing/personas/lib/cli.ts resolve khoa-pham "search bar"
 ```
 
 ---
@@ -121,7 +121,7 @@ npx tsx /Users/nganpham/nutrition-experiments/testing/personas/lib/cli.ts resolv
 ## File Locations
 
 ```
-nutrition-experiments/
+bambOO-land/
 ├── prototypes/
 │   └── 01-fuelup/              # FuelUp prototype
 ├── testing/

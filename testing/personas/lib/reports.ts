@@ -6,7 +6,7 @@ import * as fs from "node:fs";
 import * as path from "node:path";
 import type { PersonaProfile, SessionResult, AnalyticsSummary } from "./types.js";
 
-const PERSONAS_DIR = "/Users/nganpham/nutrition-experiments/testing/personas";
+const PERSONAS_DIR = "/Users/nganpham/bambOO-land/testing/personas";
 
 function loadAllPersonas(): PersonaProfile[] {
   const profilesDir = path.join(PERSONAS_DIR, "profiles");
