@@ -1,0 +1,104 @@
+{
+  "sessionId": "2026-01-09-khoa-pham-initial-test",
+  "persona": "khoa-pham",
+  "personaName": "Khoa Pham",
+  "date": "2026-01-09T13:30:00.000Z",
+  "feature": "initial-test",
+  "tasks": [
+    {
+      "name": "view-dashboard",
+      "duration": 93,
+      "success": true,
+      "facts": [
+        "Streak count: 12 days",
+        "Remaining calories: 2200 kcal",
+        "Detailed macros on dashboard: NO"
+      ],
+      "heuristics": [
+        "No macro breakdown (P/C/F) visible",
+        "Only shows calories, not nutritional detail"
+      ],
+      "screenshots": []
+    },
+    {
+      "name": "log-meal-manually",
+      "duration": 2551,
+      "success": true,
+      "facts": [
+        "Search function available: NO",
+        "Portion picker shows macros: NO",
+        "Calories per portion clearly visible"
+      ],
+      "heuristics": [
+        "No search bar to find specific foods quickly",
+        "Cannot input custom portion size (e.g., 350g)",
+        "No barcode scanner for packaged foods",
+        "Limited food database (only 5 Vietnamese items)"
+      ],
+      "screenshots": []
+    },
+    {
+      "name": "ai-scan",
+      "duration": 4276,
+      "success": true,
+      "facts": [
+        "Shows confidence percentage: YES (98%)",
+        "Shows portion size: YES",
+        "Shows calories: YES"
+      ],
+      "heuristics": [
+        "Cannot edit detected result: NO - PROBLEM",
+        "No way to adjust portion size after scan",
+        "No option to view/edit macros before logging"
+      ],
+      "screenshots": []
+    },
+    {
+      "name": "send-nudge",
+      "duration": 1581,
+      "success": true,
+      "facts": [
+        "Partner already logged - nudge not visible"
+      ],
+      "heuristics": [
+        "Cannot customize nudge message",
+        "No way to see partner's actual progress/logs"
+      ],
+      "screenshots": []
+    },
+    {
+      "name": "partnership-settings",
+      "duration": 1700,
+      "success": true,
+      "facts": [
+        "Shows partner stats: Partial",
+        "Profile switching works"
+      ],
+      "heuristics": [
+        "No detailed partner statistics (weekly progress, trends)",
+        "Cannot see partner's actual meal log",
+        "Missing: comparative charts, progress graphs"
+      ],
+      "screenshots": []
+    }
+  ],
+  "screenshots": [
+    "test-screenshots/khoa-task1-01-dashboard.png",
+    "test-screenshots/khoa-task2-01-add-view.png",
+    "test-screenshots/khoa-task2-02-portion-picker.png",
+    "test-screenshots/khoa-task2-03-logged.png",
+    "test-screenshots/khoa-task3-01-scan-view.png",
+    "test-screenshots/khoa-task3-02-scan-result.png",
+    "test-screenshots/khoa-task3-03-logged.png",
+    "test-screenshots/khoa-task4-01-dashboard.png",
+    "test-screenshots/khoa-task5-01-settings.png",
+    "test-screenshots/khoa-task5-02-switched.png",
+    "test-screenshots/khoa-task5-03-partner-dashboard.png"
+  ],
+  "newFrictionPoints": [],
+  "summary": {
+    "totalTasks": 5,
+    "successfulTasks": 5,
+    "totalDuration": 10201
+  }
+}

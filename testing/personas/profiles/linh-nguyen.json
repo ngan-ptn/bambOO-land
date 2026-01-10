@@ -1,0 +1,109 @@
+{
+  "id": "linh-nguyen",
+  "name": "Linh Nguyen",
+  "type": "primary",
+  "profile": {
+    "age": "25-32",
+    "role": "Young professional",
+    "experience": "Tried tracking apps before, stopped due to friction",
+    "goals": [
+      "Log meals in under 30 seconds",
+      "Maintain streak with partner",
+      "Quick calorie overview"
+    ],
+    "frustrations": [
+      "Slow, clunky apps",
+      "Too many steps to log food",
+      "Apps that require too much precision"
+    ],
+    "techComfort": "high",
+    "expectedBehaviors": [
+      "Impatient with slow interfaces",
+      "Prefers speed over precision",
+      "Will abandon if task takes >30s"
+    ]
+  },
+
+  "state": {
+    "firstSeen": "2026-01-09",
+    "totalSessions": 1,
+    "lastSession": "2026-01-09",
+    "appFamiliarity": "returning",
+    "featuresUsed": [
+      "dashboard-view",
+      "manual-meal-log",
+      "ai-scan",
+      "partner-settings"
+    ],
+    "featuresNotDiscovered": [],
+    "localStorage": {
+      "logs": [
+        {
+          "id": "linh-pho-1",
+          "profileId": "u1",
+          "name_vi": "Phở Bò",
+          "kcal": 450,
+          "portion": "M"
+        }
+      ],
+      "activeId": "u1",
+      "streak": {
+        "days": 12,
+        "lastLoggedDate": "2026-01-09"
+      }
+    }
+  },
+
+  "accumulatedObservations": {
+    "facts": [
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 1 (View Dashboard): Completed in 95ms"
+      },
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 2 (Log Meal): Completed in 2426ms - well under 30s target"
+      },
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 3 (AI Scan): Completed in 4337ms"
+      },
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 4 (Send Nudge): Partner already logged, nudge not visible"
+      },
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 5 (Settings): Completed in 529ms"
+      }
+    ],
+    "patterns": [
+      "Completes all tasks quickly",
+      "No hesitation in navigation",
+      "Follows expected happy paths"
+    ],
+    "frictionPoints": [
+      {
+        "date": "2026-01-09",
+        "issue": "Cannot edit AI scan results before logging",
+        "severity": "medium",
+        "feature": "ai-scan",
+        "resolved": false
+      }
+    ],
+    "hypotheses": [
+      "Would abandon if logging exceeds 30 seconds",
+      "May prefer AI scan over manual once trusted",
+      "Streak motivation aligns with competitive personality"
+    ]
+  },
+
+  "sessions": [
+    "2026-01-09-linh-nguyen-initial-test"
+  ]
+}

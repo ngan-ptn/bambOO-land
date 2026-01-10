@@ -1,0 +1,163 @@
+{
+  "generatedAt": "2026-01-09T07:35:00.275Z",
+  "personas": {
+    "khoa-pham": {
+      "sessions": 1,
+      "familiarity": "returning",
+      "factCount": 5,
+      "frictionCount": 7,
+      "unresolvedFriction": 7
+    },
+    "linh-nguyen": {
+      "sessions": 1,
+      "familiarity": "returning",
+      "factCount": 5,
+      "frictionCount": 1,
+      "unresolvedFriction": 1
+    },
+    "minh-tran": {
+      "sessions": 1,
+      "familiarity": "returning",
+      "factCount": 5,
+      "frictionCount": 5,
+      "unresolvedFriction": 5
+    }
+  },
+  "features": {
+    "initial-test": {
+      "testCount": 3,
+      "personas": [
+        "khoa-pham",
+        "linh-nguyen",
+        "minh-tran"
+      ],
+      "frictionPoints": 0
+    }
+  },
+  "unresolvedFriction": [
+    {
+      "date": "2026-01-09",
+      "issue": "No macro breakdown (P/C/F) on dashboard",
+      "severity": "high",
+      "feature": "dashboard",
+      "resolved": false,
+      "persona": "khoa-pham"
+    },
+    {
+      "date": "2026-01-09",
+      "issue": "No search bar to find specific foods",
+      "severity": "high",
+      "feature": "meal-logging",
+      "resolved": false,
+      "persona": "khoa-pham"
+    },
+    {
+      "date": "2026-01-09",
+      "issue": "Cannot input custom portion size (grams)",
+      "severity": "high",
+      "feature": "meal-logging",
+      "resolved": false,
+      "persona": "khoa-pham"
+    },
+    {
+      "date": "2026-01-09",
+      "issue": "Cannot edit AI scan result before logging",
+      "severity": "high",
+      "feature": "ai-scan",
+      "resolved": false,
+      "persona": "khoa-pham"
+    },
+    {
+      "date": "2026-01-09",
+      "issue": "No barcode scanner for packaged foods",
+      "severity": "medium",
+      "feature": "meal-logging",
+      "resolved": false,
+      "persona": "khoa-pham"
+    },
+    {
+      "date": "2026-01-09",
+      "issue": "Limited food database (only 5 items)",
+      "severity": "medium",
+      "feature": "meal-logging",
+      "resolved": false,
+      "persona": "khoa-pham"
+    },
+    {
+      "date": "2026-01-09",
+      "issue": "No detailed partner statistics or progress charts",
+      "severity": "low",
+      "feature": "partner-settings",
+      "resolved": false,
+      "persona": "khoa-pham"
+    },
+    {
+      "date": "2026-01-09",
+      "issue": "Cannot edit AI scan results before logging",
+      "severity": "medium",
+      "feature": "ai-scan",
+      "resolved": false,
+      "persona": "linh-nguyen"
+    },
+    {
+      "date": "2026-01-09",
+      "issue": "No onboarding explains 'Shared Streak' concept",
+      "severity": "high",
+      "feature": "onboarding",
+      "resolved": false,
+      "persona": "minh-tran"
+    },
+    {
+      "date": "2026-01-09",
+      "issue": "Status dots (green/red) have no legend",
+      "severity": "medium",
+      "feature": "dashboard",
+      "resolved": false,
+      "persona": "minh-tran"
+    },
+    {
+      "date": "2026-01-09",
+      "issue": "No guidance on portion size estimation",
+      "severity": "medium",
+      "feature": "meal-logging",
+      "resolved": false,
+      "persona": "minh-tran"
+    },
+    {
+      "date": "2026-01-09",
+      "issue": "Nudge mechanism unexplained - what does it do?",
+      "severity": "medium",
+      "feature": "nudge-system",
+      "resolved": false,
+      "persona": "minh-tran"
+    },
+    {
+      "date": "2026-01-09",
+      "issue": "No retry option if AI scan is wrong",
+      "severity": "medium",
+      "feature": "ai-scan",
+      "resolved": false,
+      "persona": "minh-tran"
+    }
+  ],
+  "recentSessions": [
+    {
+      "sessionId": "2026-01-09-khoa-pham-initial-test",
+      "persona": "khoa-pham",
+      "feature": "initial-test",
+      "date": "2026-01-09"
+    },
+    {
+      "sessionId": "2026-01-09-minh-tran-initial-test",
+      "persona": "minh-tran",
+      "feature": "initial-test",
+      "date": "2026-01-09"
+    },
+    {
+      "sessionId": "2026-01-09-linh-nguyen-initial-test",
+      "persona": "linh-nguyen",
+      "feature": "initial-test",
+      "date": "2026-01-09"
+    }
+  ]
+}

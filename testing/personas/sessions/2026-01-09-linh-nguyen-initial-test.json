@@ -1,0 +1,85 @@
+{
+  "sessionId": "2026-01-09-linh-nguyen-initial-test",
+  "persona": "linh-nguyen",
+  "personaName": "Linh Nguyen",
+  "date": "2026-01-09T13:26:00.000Z",
+  "feature": "initial-test",
+  "tasks": [
+    {
+      "name": "view-dashboard",
+      "duration": 95,
+      "success": true,
+      "facts": [
+        "Streak count visible: 12 days",
+        "Remaining calories visible: 2200 kcal",
+        "Partner status indicators visible"
+      ],
+      "heuristics": [],
+      "screenshots": []
+    },
+    {
+      "name": "log-meal-manually",
+      "duration": 2426,
+      "success": true,
+      "facts": [
+        "Completed in 2426ms (target: <30,000ms)",
+        "+ button clearly visible in navigation",
+        "Food grid shows Vietnamese dishes with icons"
+      ],
+      "heuristics": [],
+      "screenshots": []
+    },
+    {
+      "name": "ai-scan",
+      "duration": 4337,
+      "success": true,
+      "facts": [
+        "Manual/AI Scan toggle clearly visible",
+        "2-second scan animation provides feedback",
+        "Result shows 98% confidence"
+      ],
+      "heuristics": [
+        "Cannot edit AI scan results before logging"
+      ],
+      "screenshots": []
+    },
+    {
+      "name": "send-nudge",
+      "duration": 1554,
+      "success": true,
+      "facts": [
+        "Partner already logged - nudge not visible"
+      ],
+      "heuristics": [],
+      "screenshots": []
+    },
+    {
+      "name": "partnership-settings",
+      "duration": 529,
+      "success": true,
+      "facts": [
+        "Settings accessible via gear icon",
+        "Profile Control section visible"
+      ],
+      "heuristics": [],
+      "screenshots": []
+    }
+  ],
+  "screenshots": [
+    "test-screenshots/linh-task1-01-dashboard.png",
+    "test-screenshots/linh-task2-01-add-view.png",
+    "test-screenshots/linh-task2-02-portion-picker.png",
+    "test-screenshots/linh-task2-03-logged.png",
+    "test-screenshots/linh-task3-01-scan-view.png",
+    "test-screenshots/linh-task3-02-scan-result.png",
+    "test-screenshots/linh-task3-03-logged.png",
+    "test-screenshots/linh-task4-01-dashboard.png",
+    "test-screenshots/linh-task5-01-settings.png"
+  ],
+  "newFrictionPoints": [],
+  "summary": {
+    "totalTasks": 5,
+    "successfulTasks": 5,
+    "totalDuration": 8941
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "sessionId": "2026-01-09-minh-tran-initial-test",
+  "persona": "minh-tran",
+  "personaName": "Minh Tran",
+  "date": "2026-01-09T13:28:00.000Z",
+  "feature": "initial-test",
+  "tasks": [
+    {
+      "name": "view-dashboard",
+      "duration": 1082,
+      "success": true,
+      "facts": [
+        "Streak count visible: 12 days",
+        "Shared Streak label visible",
+        "Partner names: Duy and Anh"
+      ],
+      "heuristics": [
+        "No onboarding explains Shared Streak concept",
+        "Status dots have no legend"
+      ],
+      "screenshots": []
+    },
+    {
+      "name": "log-meal-manually",
+      "duration": 3597,
+      "success": true,
+      "facts": [
+        "Explored both Manual and AI Scan tabs",
+        "Food icons help visual recognition",
+        "Portion picker shows calories per size"
+      ],
+      "heuristics": [
+        "No guidance on portion size estimation",
+        "First-timer might not know what S/M/L means in grams"
+      ],
+      "screenshots": []
+    },
+    {
+      "name": "ai-scan",
+      "duration": 4571,
+      "success": true,
+      "facts": [
+        "Camera interface has clear frame guides",
+        "98% confidence visible",
+        "Single Log to Dashboard button is clear"
+      ],
+      "heuristics": [
+        "No option to adjust portion after AI detection",
+        "No clear retry option if result is wrong"
+      ],
+      "screenshots": []
+    },
+    {
+      "name": "send-nudge",
+      "duration": 1567,
+      "success": true,
+      "facts": [
+        "Partner already logged - nudge card not visible"
+      ],
+      "heuristics": [
+        "What does nudge actually do? No explanation"
+      ],
+      "screenshots": []
+    },
+    {
+      "name": "partnership-settings",
+      "duration": 1095,
+      "success": true,
+      "facts": [
+        "Partner name visible: Anh",
+        "Profile Control section visible",
+        "Tried profile switching"
+      ],
+      "heuristics": [
+        "Settings icon in header is small",
+        "Profile switching concept may confuse first-timers"
+      ],
+      "screenshots": []
+    }
+  ],
+  "screenshots": [
+    "test-screenshots/minh-task1-01-dashboard.png",
+    "test-screenshots/minh-task2-01-add-view.png",
+    "test-screenshots/minh-task2-02-scan-tab.png",
+    "test-screenshots/minh-task2-03-portion-picker.png",
+    "test-screenshots/minh-task2-04-logged.png",
+    "test-screenshots/minh-task3-01-scan-view.png",
+    "test-screenshots/minh-task3-02-scan-result.png",
+    "test-screenshots/minh-task3-03-logged.png",
+    "test-screenshots/minh-task4-01-dashboard.png",
+    "test-screenshots/minh-task5-01-settings.png",
+    "test-screenshots/minh-task5-02-switched.png"
+  ],
+  "newFrictionPoints": [],
+  "summary": {
+    "totalTasks": 5,
+    "successfulTasks": 5,
+    "totalDuration": 11912
+  }
+}

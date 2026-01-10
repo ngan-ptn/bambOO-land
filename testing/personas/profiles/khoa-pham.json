@@ -1,0 +1,157 @@
+{
+  "id": "khoa-pham",
+  "name": "Khoa Pham",
+  "type": "tertiary",
+  "profile": {
+    "age": "33+",
+    "role": "Fitness enthusiast",
+    "experience": "Uses tracking apps regularly (MyFitnessPal, etc.)",
+    "goals": [
+      "Precise macro tracking (P/C/F)",
+      "Accurate calorie counts",
+      "Data-driven nutrition decisions"
+    ],
+    "frustrations": [
+      "Inaccurate food databases",
+      "No custom portion input",
+      "Missing macro breakdowns",
+      "Can't verify AI accuracy"
+    ],
+    "techComfort": "high",
+    "expectedBehaviors": [
+      "Immediately looks for detailed nutrition info",
+      "Wants to search specific foods",
+      "Questions accuracy of auto-detection",
+      "Expects barcode scanning",
+      "Willing to spend time for accuracy"
+    ]
+  },
+
+  "state": {
+    "firstSeen": "2026-01-09",
+    "totalSessions": 1,
+    "lastSession": "2026-01-09",
+    "appFamiliarity": "returning",
+    "featuresUsed": [
+      "dashboard-view",
+      "manual-meal-log",
+      "ai-scan",
+      "partner-settings",
+      "profile-switch"
+    ],
+    "featuresNotDiscovered": [],
+    "localStorage": {
+      "logs": [
+        {
+          "id": "khoa-pho-1",
+          "profileId": "u1",
+          "name_vi": "Phở Bò",
+          "kcal": 600,
+          "portion": "L"
+        }
+      ],
+      "activeId": "u2",
+      "streak": {
+        "days": 12,
+        "lastLoggedDate": "2026-01-09"
+      }
+    }
+  },
+
+  "accumulatedObservations": {
+    "facts": [
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 1 (View Dashboard): Completed in 93ms - immediately noticed missing macros"
+      },
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 2 (Log Meal): Completed in 2551ms - no search function found"
+      },
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 3 (AI Scan): Completed in 4276ms - cannot edit result"
+      },
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 4 (Send Nudge): Partner already logged"
+      },
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 5 (Settings): Completed in 1700ms - looked for detailed stats"
+      }
+    ],
+    "patterns": [
+      "Immediately seeks detailed nutritional data",
+      "Selects larger portions (bulking/fitness focus)",
+      "Critically evaluates AI accuracy",
+      "Looks for features that don't exist yet"
+    ],
+    "frictionPoints": [
+      {
+        "date": "2026-01-09",
+        "issue": "No macro breakdown (P/C/F) on dashboard",
+        "severity": "high",
+        "feature": "dashboard",
+        "resolved": false
+      },
+      {
+        "date": "2026-01-09",
+        "issue": "No search bar to find specific foods",
+        "severity": "high",
+        "feature": "meal-logging",
+        "resolved": false
+      },
+      {
+        "date": "2026-01-09",
+        "issue": "Cannot input custom portion size (grams)",
+        "severity": "high",
+        "feature": "meal-logging",
+        "resolved": false
+      },
+      {
+        "date": "2026-01-09",
+        "issue": "Cannot edit AI scan result before logging",
+        "severity": "high",
+        "feature": "ai-scan",
+        "resolved": false
+      },
+      {
+        "date": "2026-01-09",
+        "issue": "No barcode scanner for packaged foods",
+        "severity": "medium",
+        "feature": "meal-logging",
+        "resolved": false
+      },
+      {
+        "date": "2026-01-09",
+        "issue": "Limited food database (only 5 items)",
+        "severity": "medium",
+        "feature": "meal-logging",
+        "resolved": false
+      },
+      {
+        "date": "2026-01-09",
+        "issue": "No detailed partner statistics or progress charts",
+        "severity": "low",
+        "feature": "partner-settings",
+        "resolved": false
+      }
+    ],
+    "hypotheses": [
+      "Would likely use a different app for serious tracking",
+      "Might use FuelUp only for accountability, not precision",
+      "Would request macro display as first feature",
+      "Partnership feature is interesting but not enough alone"
+    ]
+  },
+
+  "sessions": [
+    "2026-01-09-khoa-pham-initial-test"
+  ]
+}

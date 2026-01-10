@@ -1,0 +1,140 @@
+{
+  "id": "minh-tran",
+  "name": "Minh Tran",
+  "type": "secondary",
+  "profile": {
+    "age": "18-24",
+    "role": "University student",
+    "experience": "Never used calorie tracking apps before",
+    "goals": [
+      "Learn to track nutrition",
+      "Build healthy eating habits",
+      "Accountability with friend/partner"
+    ],
+    "frustrations": [
+      "Confusing interfaces",
+      "Too much jargon",
+      "Feeling overwhelmed by options"
+    ],
+    "techComfort": "medium",
+    "expectedBehaviors": [
+      "Explores UI before committing to actions",
+      "Reads labels and descriptions",
+      "May get confused by unfamiliar concepts",
+      "Willing to spend time learning"
+    ]
+  },
+
+  "state": {
+    "firstSeen": "2026-01-09",
+    "totalSessions": 1,
+    "lastSession": "2026-01-09",
+    "appFamiliarity": "returning",
+    "featuresUsed": [
+      "dashboard-view",
+      "manual-meal-log",
+      "ai-scan",
+      "partner-settings",
+      "profile-switch"
+    ],
+    "featuresNotDiscovered": [],
+    "localStorage": {
+      "logs": [
+        {
+          "id": "minh-pho-1",
+          "profileId": "u1",
+          "name_vi": "Phở Bò",
+          "kcal": 350,
+          "portion": "S"
+        }
+      ],
+      "activeId": "u2",
+      "streak": {
+        "days": 12,
+        "lastLoggedDate": "2026-01-09"
+      }
+    }
+  },
+
+  "accumulatedObservations": {
+    "facts": [
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 1 (View Dashboard): Completed in 1082ms - took time to read"
+      },
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 2 (Log Meal): Completed in 3597ms - explored both tabs first"
+      },
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 3 (AI Scan): Completed in 4571ms"
+      },
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 4 (Send Nudge): Partner already logged"
+      },
+      {
+        "date": "2026-01-09",
+        "feature": "initial-test",
+        "observation": "Task 5 (Settings): Completed in 1095ms - tried profile switching"
+      }
+    ],
+    "patterns": [
+      "Explores multiple options before deciding",
+      "Switches between tabs to understand features",
+      "Takes longer than power users but completes tasks"
+    ],
+    "frictionPoints": [
+      {
+        "date": "2026-01-09",
+        "issue": "No onboarding explains 'Shared Streak' concept",
+        "severity": "high",
+        "feature": "onboarding",
+        "resolved": false
+      },
+      {
+        "date": "2026-01-09",
+        "issue": "Status dots (green/red) have no legend",
+        "severity": "medium",
+        "feature": "dashboard",
+        "resolved": false
+      },
+      {
+        "date": "2026-01-09",
+        "issue": "No guidance on portion size estimation",
+        "severity": "medium",
+        "feature": "meal-logging",
+        "resolved": false
+      },
+      {
+        "date": "2026-01-09",
+        "issue": "Nudge mechanism unexplained - what does it do?",
+        "severity": "medium",
+        "feature": "nudge-system",
+        "resolved": false
+      },
+      {
+        "date": "2026-01-09",
+        "issue": "No retry option if AI scan is wrong",
+        "severity": "medium",
+        "feature": "ai-scan",
+        "resolved": false
+      }
+    ],
+    "hypotheses": [
+      "Would benefit from onboarding tooltips",
+      "Might ask 'What does the fire mean?'",
+      "Profile switching concept may be confusing",
+      "Needs reassurance that actions worked correctly"
+    ]
+  },
+
+  "sessions": [
+    "2026-01-09-minh-tran-initial-test"
+  ]
+}
