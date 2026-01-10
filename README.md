@@ -11,7 +11,7 @@ This repository contains 5 prototypes, each exploring a different angle on helpi
 | # | Name | Angle | Status |
 |---|------|-------|--------|
 | 01 | [FuelUp](prototypes/01-fuelup/) | Partner accountability + shared streaks | Active |
-| 02 | TBD | TBD | Planned |
+| 02 | [ai-lead](prototypes/02-ai-lead/) | Clean prototypER design system | Active |
 | 03 | TBD | TBD | Planned |
 | 04 | TBD | TBD | Planned |
 | 05 | TBD | TBD | Planned |
