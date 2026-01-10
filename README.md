@@ -11,10 +11,23 @@ This repository contains 5 prototypes, each exploring a different angle on helpi
 | # | Name | Angle | Status |
 |---|------|-------|--------|
 | 01 | [FuelUp](prototypes/01-fuelup/) | Partner accountability + shared streaks | Active |
-| 02 | [ai-lead](prototypes/02-ai-lead/) | Clean prototypER design system | Active |
-| 03 | TBD | TBD | Planned |
-| 04 | TBD | TBD | Planned |
-| 05 | TBD | TBD | Planned |
+| 02 | [PROTOTYPE](prototypes/02-PROTOTYPE/) | Base Calo Tracker - Vietnamese food logging with S/M/L portions | Active |
+| 02a | [ai-delegation](prototypes/02a-ai-delegation/) | Full Calo Tracker with AI-assisted food scanning + multi-user support | Active |
+| 02b | [prototype-lite](prototypes/02b-prototype-lite/) | Feature implementation via prototype-lite approach | Planned |
+| 02c | [prototype-gated](prototypes/02c-prototype-gated/) | Feature implementation via prototype-gated approach | Planned |
+| 02d | [prototypER](prototypes/02d-prototypER/) | Feature implementation via prototypER approach | Planned |
+
+### 02a-ai-delegation Features
+
+Vietnamese calorie tracker with advanced features implemented via AI delegation workflow:
+
+- **Quick Add**: 2-tap meal logging with 50+ Vietnamese foods (S/M/L portions)
+- **AI Food Scan** (CR03): Camera capture with multi-food detection, confidence badges, checkboxes
+- **Multi-User Support** (CR05): Partner profiles, profile switching, "Log for Both" toggle
+- **Dashboard**: Calorie ring + macro progress bars
+- **SQLite Persistence**: Browser-based database via sql.js WASM
+
+Tech: React 18 + TypeScript + Vite + Tailwind CSS v4
 
 ## Quick Start
 
