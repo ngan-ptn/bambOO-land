@@ -1,139 +1,75 @@
-@import "tailwindcss";
+/* Import Nunito Sans font for warm, wellness-inspired typography */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&display=swap');
 
-/* prototypER Design Tokens */
-@theme {
-  /* Colors */
-  --color-background: #FFFFFF;
-  --color-surface: #F8F9FA;
-  --color-border: #E5E7EB;
-  --color-text-primary: #1A1A1A;
-  --color-text-secondary: #6B7280;
-  --color-accent: #2563EB;
-  --color-accent-muted: #DBEAFE;
-  --color-success: #10B981;
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  /* Typography */
-  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
-
-  /* Spacing */
-  --spacing-screen: 20px;
-  --spacing-card: 16px;
-  --spacing-section: 24px;
-
-  /* Border Radius */
-  --radius-card: 12px;
-  --radius-button: 8px;
-  --radius-pill: 9999px;
-
-  /* Transitions */
-  --transition-fast: 150ms ease-out;
-  --transition-normal: 200ms ease-out;
-}
-
-/* Base Styles */
-html {
-  font-family: var(--font-family-sans);
-  background-color: var(--color-background);
-  color: var(--color-text-primary);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  min-height: 100dvh;
-}
-
-#root {
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Utility Classes */
-.text-secondary {
-  color: var(--color-text-secondary);
-}
-
-.bg-surface {
-  background-color: var(--color-surface);
-}
-
-.card {
-  background-color: var(--color-background);
-  border-radius: var(--radius-card);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-}
-
-.btn-primary {
-  background-color: var(--color-accent);
-  color: white;
-  border-radius: var(--radius-button);
-  padding: 12px 24px;
-  font-weight: 500;
-  transition: opacity var(--transition-fast);
-}
-
-.btn-primary:hover {
-  opacity: 0.9;
-}
-
-.pill {
-  border-radius: var(--radius-pill);
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-/* Safe area for mobile */
-.safe-bottom {
-  padding-bottom: max(16px, env(safe-area-inset-bottom));
-}
-
-/* Hide scrollbar */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-}
-
-/* Animations */
-@keyframes slide-up {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
+/* Base layer: global reset and defaults for wellness-inspired design */
+@layer base {
+  :root {
+    /* CSS variables matching new design system */
+    --background: 0 0% 96%;           /* gray-10 */
+    --foreground: 24 42% 15%;         /* brown-90 */
+    --card: 0 0% 100%;
+    --card-foreground: 24 42% 15%;    /* brown-90 */
+    --primary: 75 32% 44%;            /* green-60 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 30 100% 33%;         /* orange-60 */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 20 5% 43%;               /* gray-60 */
+    --muted-foreground: 20 5% 43%;
+    --border: 0 1% 88%;               /* gray-20 */
+    --ring: 75 32% 44%;               /* green-60 */
+    --radius: 20px;
   }
-  to {
-    transform: translateY(0);
-    opacity: 1;
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    /* Mobile-first: ensure minimum width support */
+    min-width: 320px;
+    /* App content width is now constrained by an inner shell container
+       instead of the body itself so that global scroll locking (e.g. modals)
+       cannot change the perceived size of the main UI. */
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Ensure touch targets are accessible */
+  button, a, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
   }
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
+/* Utility classes for the design system */
+@layer utilities {
+  /* Hide scrollbar but allow scrolling */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
-  to {
-    opacity: 1;
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
-}
 
-.animate-slide-up {
-  animation: slide-up 200ms ease-out;
-}
+  /* Safe area margin for mobile notches - adds to existing padding */
+  .safe-bottom {
+    margin-bottom: env(safe-area-inset-bottom, 0px);
+  }
 
-.animate-fade-in {
-  animation: fade-in 150ms ease-out;
-}
-
-/* Line clamp */
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  /* Tap highlight removal for cleaner mobile UX */
+  .tap-highlight-none {
+    -webkit-tap-highlight-color: transparent;
+  }
 }

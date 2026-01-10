@@ -1,69 +1,63 @@
-import type { FoodLog } from '../../types';
-import { useFoodById } from '../../hooks';
-import { format } from 'date-fns';
+/**
+ * MealCard - Individual logged meal display with delete capability.
+ * Shows Vietnamese dish name, calories, and time logged.
+ * Delete via single tap on trash icon.
+ */
+
+import { useCallback } from 'react'
+import { Trash2 } from 'lucide-react'
+import { cn, formatTime } from '@/lib/utils'
+import type { LogEntry } from '@/types'
 
 interface MealCardProps {
-  log: FoodLog;
-  onDelete: (logId: string) => void;
+  entry: LogEntry
+  onDelete: (entryId: string) => void
 }
 
-export function MealCard({ log, onDelete }: MealCardProps) {
-  const food = useFoodById(log.food_id);
-
-  if (!food) return null;
-
-  const time = format(new Date(log.logged_at), 'HH:mm');
+export function MealCard({ entry, onDelete }: MealCardProps) {
+  const handleDeleteClick = useCallback(() => {
+    onDelete(entry.id)
+  }, [entry.id, onDelete])
 
   return (
-    <div className="card p-4 flex items-center gap-3">
-      <span className="text-2xl">{getCategoryEmoji(food.category)}</span>
-
+    <div
+      className={cn(
+        'bg-background-card rounded-card shadow-card p-4',
+        'flex items-center justify-between gap-3',
+        'transition-colors duration-150'
+      )}
+    >
+      {/* Meal info: name, portion badge, and calories */}
       <div className="flex-1 min-w-0">
-        <p className="font-medium text-[var(--color-text-primary)] truncate">
-          {food.name_vi}
-        </p>
-        <p className="text-sm text-[var(--color-text-secondary)]">
-          {log.portion} · {time}
+        <div className="flex items-center gap-2">
+          <p className="text-body text-foreground font-medium truncate">
+            {entry.name_vi}
+          </p>
+          {/* Portion size badge */}
+          <span className="text-caption bg-tertiary/20 text-tertiary-dark px-2 py-0.5 rounded-pill shrink-0">
+            {entry.portion}
+          </span>
+        </div>
+        <p className="text-caption text-foreground-muted mt-0.5">
+          {entry.kcal} kcal · {formatTime(entry.timestamp)}
         </p>
       </div>
 
-      <div className="text-right">
-        <p className="font-semibold text-[var(--color-text-primary)]">
-          {log.kcal}
-        </p>
-        <p className="text-xs text-[var(--color-text-secondary)]">kcal</p>
-      </div>
-
+      {/* Delete button */}
       <button
-        onClick={() => onDelete(log.id)}
-        className="p-2 text-[var(--color-text-secondary)] hover:text-red-500 transition-colors"
-        aria-label="Delete"
+        type="button"
+        onClick={handleDeleteClick}
+        className={cn(
+          'flex items-center justify-center',
+          'p-2 rounded-pill transition-all duration-150',
+          'focus:outline-none focus:ring-2 focus:ring-ring',
+          'tap-highlight-none',
+          'text-foreground-muted hover:text-error hover:bg-error/10'
+        )}
+        aria-label="Delete meal"
       >
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        >
-          <polyline points="3,6 5,6 21,6" />
-          <path d="M19,6v14a2,2,0,0,1-2,2H7a2,2,0,0,1-2-2V6M8,6V4a2,2,0,0,1,2-2h4a2,2,0,0,1,2,2V6" />
-        </svg>
+        <Trash2 size={18} />
       </button>
     </div>
-  );
-}
-
-function getCategoryEmoji(category: string): string {
-  const emojiMap: Record<string, string> = {
-    noodles: '🍜',
-    rice: '🍚',
-    banh_mi: '🥖',
-    snacks: '🥟',
-    drinks: '🧋',
-    desserts: '🍮',
-    clean_eating: '🥗',
-  };
-  return emojiMap[category] || '🍽️';
+  )
 }
