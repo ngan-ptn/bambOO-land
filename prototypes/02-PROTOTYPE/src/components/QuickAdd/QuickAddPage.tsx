@@ -297,15 +297,17 @@ export function QuickAddPage({}: QuickAddPageProps) {
           onDeleteLog={removeLog}
         />
 
-        {/* Quick Add section: header + search bar on same row, search aligned right */}
-        <div className="flex items-center justify-between gap-4">
-          <h2 className="text-title text-foreground shrink-0">Quick Add</h2>
-          <FoodSearchBar
-            value={query}
-            onChange={handleSearchChange}
-            autoFocus={true}
-            className="max-w-[50%]"
-          />
+        {/* Quick Add header section */}
+        <div className="bg-primary rounded-card p-6 -mx-4">
+          <div className="flex items-center justify-between gap-4">
+            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground-inverse">Quick Add</h2>
+            <FoodSearchBar
+              value={query}
+              onChange={handleSearchChange}
+              autoFocus={true}
+              className="max-w-[50%]"
+            />
+          </div>
         </div>
 
         {/* Conditional content: search results OR normal browse mode */}

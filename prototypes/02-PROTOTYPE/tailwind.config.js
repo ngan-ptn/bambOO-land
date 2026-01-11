@@ -159,24 +159,26 @@ export default {
         'tile': '0 1px 3px rgba(55, 35, 21, 0.05)',
       },
 
-      // Typography: Nunito Sans font
+      // DLS: Typography - 'Outfit' geometric sans-serif
       fontFamily: {
-        sans: ['Nunito Sans', 'system-ui', 'sans-serif'],
+        sans: ['Outfit', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        // New design system scale - optimized for mobile readability
-        'h1': ['2rem', { lineHeight: '2.5rem', fontWeight: '600' }],         // 32px
-        'h2': ['1.5rem', { lineHeight: '2rem', fontWeight: '600' }],         // 24px
-        'h3': ['1.25rem', { lineHeight: '1.75rem', fontWeight: '600' }],     // 20px
-        'body-lg': ['1.125rem', { lineHeight: '1.75rem', fontWeight: '400' }], // 18px
-        'body': ['1rem', { lineHeight: '1.5rem', fontWeight: '400' }],       // 16px
-        'caption': ['0.875rem', { lineHeight: '1.25rem', fontWeight: '400' }], // 14px
-        'numeric-lg': ['1.75rem', { lineHeight: '2.25rem', fontWeight: '600' }], // 28px
-        'numeric': ['1.25rem', { lineHeight: '1.75rem', fontWeight: '600' }], // 20px
-
+        // DLS: Typography scale - exact matches from design system
+        'h1': ['2.25rem', { lineHeight: '2.5rem', fontWeight: '700', letterSpacing: '-0.02em' }],
+        'h2': ['1.875rem', { lineHeight: '2.25rem', fontWeight: '700', letterSpacing: '-0.02em' }],
+        'h3': ['1.5rem', { lineHeight: '2rem', fontWeight: '700', letterSpacing: '-0.02em' }],
+        'body-lg': ['1.125rem', { lineHeight: '1.75rem', fontWeight: '400' }],
+        'body': ['1rem', { lineHeight: '1.5rem', fontWeight: '400' }],
+        'body-sm': ['0.875rem', { lineHeight: '1.25rem', fontWeight: '400' }],
+        'caption': ['0.875rem', { lineHeight: '1.25rem', fontWeight: '400' }],
+        'label': ['0.875rem', { lineHeight: '1.25rem', fontWeight: '500', textTransform: 'uppercase', letterSpacing: '0.05em' }],
+        // Add headline for backward compatibility
+        'headline': ['2rem', { lineHeight: '2.25rem', fontWeight: '800', letterSpacing: '-0.02em' }],
         // Legacy aliases for backward compatibility
-        'headline': ['2rem', { lineHeight: '2.5rem', fontWeight: '600' }],   // 32px
-        'title': ['1.25rem', { lineHeight: '1.75rem', fontWeight: '600' }],  // 20px
+        'title': ['1.25rem', { lineHeight: '1.75rem', fontWeight: '600' }],
+        'numeric-lg': ['1.75rem', { lineHeight: '2.25rem', fontWeight: '600' }],
+        'numeric': ['1.25rem', { lineHeight: '1.75rem', fontWeight: '600' }],
       },
 
       // Animation for progress ring and transitions

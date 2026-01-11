@@ -28,10 +28,10 @@ export function DailySummary({ summary, goals, className }: DailySummaryProps) {
         <div className="text-6xl mb-4" role="img" aria-label="Bowl of food">
           🍜
         </div>
-        <p className="text-body text-foreground-muted text-center">
+        <p className="text-body text-foreground-secondary text-center">
           Hãy thêm món đầu tiên...
         </p>
-        <p className="text-caption text-foreground-muted mt-1">
+        <p className="text-caption text-foreground-secondary mt-1">
           Tap a food below to start tracking
         </p>
       </div>
@@ -39,7 +39,7 @@ export function DailySummary({ summary, goals, className }: DailySummaryProps) {
   }
 
   return (
-    <div className={cn('flex flex-col items-center', className)}>
+    <div className={cn('flex flex-col items-center p-8 bg-background-secondary rounded-card', className)}>
       {/* Calorie progress ring - primary visual */}
       <ProgressRing
         consumed={summary.consumedKcal}

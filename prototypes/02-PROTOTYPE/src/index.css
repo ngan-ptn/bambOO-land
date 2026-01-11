@@ -1,28 +1,25 @@
-/* Import Nunito Sans font for warm, wellness-inspired typography */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&display=swap');
+/* Import Nunito Sans font for original design system */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap');
 
 /* Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Base layer: global reset and defaults for wellness-inspired design */
+/* Base layer: global reset and defaults for original design system */
 @layer base {
   :root {
-    /* CSS variables matching new design system */
-    --background: 0 0% 96%;           /* gray-10 */
-    --foreground: 24 42% 15%;         /* brown-90 */
-    --card: 0 0% 100%;
-    --card-foreground: 24 42% 15%;    /* brown-90 */
-    --primary: 75 32% 44%;            /* green-60 */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 30 100% 33%;         /* orange-60 */
-    --secondary-foreground: 0 0% 100%;
-    --muted: 20 5% 43%;               /* gray-60 */
-    --muted-foreground: 20 5% 43%;
-    --border: 0 1% 88%;               /* gray-20 */
-    --ring: 75 32% 44%;               /* green-60 */
-    --radius: 20px;
+    /* CSS variables matching original neutral design system */
+    --background: #FFFFFF;
+    --background-secondary: #F8F9FA;
+    --foreground: #1A1A1A;
+    --foreground-secondary: #64748B;
+    --foreground-inverse: #FFFFFF;
+    --primary: #2563EB;
+    --secondary: #6B7280;
+    --accent: #10B981;
+    --border: #E5E7EB;
+    --ring: #2563EB;
   }
 
   * {
@@ -52,7 +49,7 @@
   }
 }
 
-/* Utility classes for the design system */
+/* Basic utility classes for original design system */
 @layer utilities {
   /* Hide scrollbar but allow scrolling */
   .scrollbar-hide {
