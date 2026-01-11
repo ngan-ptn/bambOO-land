@@ -297,10 +297,11 @@ export function QuickAddPage({}: QuickAddPageProps) {
           onDeleteLog={removeLog}
         />
 
-        {/* Quick Add header section */}
-        <div className="bg-primary rounded-card p-6 -mx-4">
-          <div className="flex items-center justify-between gap-4">
-            <h2 className="text-2xl font-black uppercase tracking-tight text-foreground-inverse">Quick Add</h2>
+        {/* DLS-workflow: Quick Add header section with spacious layout */}
+        <div className="bg-primary rounded-lg p-6 -mx-4 mb-8 shadow-dls">
+          {/* DLS-workflow: Generous padding and clear visual hierarchy */}
+          <div className="flex items-center justify-between gap-6">
+            <h2 className="text-2xl font-semibold text-foreground-inverse">Quick Add</h2>
             <FoodSearchBar
               value={query}
               onChange={handleSearchChange}

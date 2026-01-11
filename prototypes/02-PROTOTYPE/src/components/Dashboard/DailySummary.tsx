@@ -23,15 +23,16 @@ export function DailySummary({ summary, goals, className }: DailySummaryProps) {
   // Empty state when no meals logged today
   if (!hasLogs) {
     return (
-      <div className={cn('flex flex-col items-center justify-center py-12', className)}>
+      <div className={cn('flex flex-col items-center justify-center py-16 px-8', className)}>
+        {/* DLS-workflow: Generous spacing for empty states */}
         {/* Simple emoji illustration - keeps bundle small vs SVG illustration */}
-        <div className="text-6xl mb-4" role="img" aria-label="Bowl of food">
+        <div className="text-6xl mb-6 opacity-75" role="img" aria-label="Bowl of food">
           🍜
         </div>
-        <p className="text-body text-foreground-secondary text-center">
+        <p className="text-lg text-foreground-muted text-center font-medium mb-2">
           Hãy thêm món đầu tiên...
         </p>
-        <p className="text-caption text-foreground-secondary mt-1">
+        <p className="text-sm text-foreground-subtle text-center max-w-xs">
           Tap a food below to start tracking
         </p>
       </div>
@@ -39,16 +40,18 @@ export function DailySummary({ summary, goals, className }: DailySummaryProps) {
   }
 
   return (
-    <div className={cn('flex flex-col items-center p-8 bg-background-secondary rounded-card', className)}>
+    <div className={cn('flex flex-col items-center p-8 bg-background-card rounded-lg shadow-dls-lg', className)}>
+      {/* DLS-workflow: Clean card with subtle elevation and spacious padding */}
       {/* Calorie progress ring - primary visual */}
       <ProgressRing
         consumed={summary.consumedKcal}
         goal={goals.dailyKcal}
-        className="mb-6"
+        className="mb-8"
       />
 
       {/* Macronutrient bars - protein, carbs, fat */}
-      <div className="w-full max-w-xs space-y-4">
+      <div className="w-full max-w-xs space-y-5">
+        {/* DLS-workflow: Increased spacing between macro elements */}
         <ProteinBar
           consumed={summary.consumedProtein}
           goal={goals.dailyProtein}
