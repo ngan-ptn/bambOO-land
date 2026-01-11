@@ -1,25 +1,66 @@
-/* Import Nunito Sans font for original design system */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap');
+/* Import Inter font for DLS-workflow design system */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 /* Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Base layer: global reset and defaults for original design system */
+/* Base layer: DLS-workflow design system foundation */
 @layer base {
   :root {
-    /* CSS variables matching original neutral design system */
-    --background: #FFFFFF;
-    --background-secondary: #F8F9FA;
-    --foreground: #1A1A1A;
-    --foreground-secondary: #64748B;
-    --foreground-inverse: #FFFFFF;
-    --primary: #2563EB;
-    --secondary: #6B7280;
-    --accent: #10B981;
-    --border: #E5E7EB;
-    --ring: #2563EB;
+    /* DLS-workflow: Clean, systematic CSS variables */
+    --background: #FAFAFA;       /* neutral-50 - main background */
+    --background-card: #FFFFFF;  /* Pure white for cards */
+    --background-elevated: #F5F5F5; /* neutral-100 - subtle elevation */
+
+    --foreground: #171717;       /* neutral-900 - primary text */
+    --foreground-secondary: #525252; /* neutral-600 - headings */
+    --foreground-muted: #737373; /* neutral-500 - body text */
+    --foreground-subtle: #A3A3A3; /* neutral-400 - captions */
+    --foreground-inverse: #FFFFFF; /* White text on dark backgrounds */
+
+    --primary: #3B82F6;           /* blue-500 - primary actions */
+    --primary-light: #60A5FA;     /* blue-400 - hover states */
+    --primary-dark: #2563EB;      /* blue-600 - active states */
+
+    --secondary: #737373;         /* neutral-500 - secondary elements */
+
+    --success: #22C55E;           /* green-500 - success states */
+    --warning: #F97316;           /* orange-500 - warning states */
+    --error: #DC2626;             /* Red for errors */
+
+    --border: #E5E5E5;            /* neutral-200 - subtle borders */
+    --border-strong: #D4D4D4;     /* neutral-300 - stronger borders */
+
+    --ring: #3B82F6;              /* blue-500 - focus rings */
+
+    /* DLS-workflow: Spacious layout system */
+    --space-xs: 0.25rem;    /* 4px */
+    --space-sm: 0.5rem;     /* 8px */
+    --space-md: 0.75rem;    /* 12px */
+    --space-lg: 1rem;       /* 16px */
+    --space-xl: 1.5rem;     /* 24px */
+    --space-2xl: 2rem;      /* 32px */
+    --space-3xl: 3rem;      /* 48px */
+    --space-4xl: 4rem;      /* 64px */
+
+    /* DLS-workflow: Typography scale */
+    --font-size-xs: 0.75rem;   /* 12px */
+    --font-size-sm: 0.875rem;  /* 14px */
+    --font-size-base: 1rem;    /* 16px */
+    --font-size-lg: 1.125rem;  /* 18px */
+    --font-size-xl: 1.25rem;   /* 20px */
+    --font-size-2xl: 1.5rem;   /* 24px */
+    --font-size-3xl: 1.875rem; /* 30px */
+    --font-size-4xl: 2.25rem;  /* 36px */
+
+    /* DLS-workflow: Subtle motion system */
+    --duration-fast: 150ms;   /* Quick interactions */
+    --duration-normal: 200ms; /* Standard transitions */
+    --duration-slow: 250ms;   /* Slower state changes */
+
+    --easing: cubic-bezier(0.4, 0.0, 0.2, 1); /* Material Design easing */
   }
 
   * {
@@ -33,6 +74,9 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    /* DLS-workflow: Professional typography foundation */
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     /* Mobile-first: ensure minimum width support */
     min-width: 320px;
     /* App content width is now constrained by an inner shell container
@@ -40,16 +84,53 @@
        cannot change the perceived size of the main UI. */
     margin: 0;
     padding: 0;
+    /* DLS-workflow: Improve text rendering */
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* DLS-workflow: Enhanced heading hierarchy */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-foreground-secondary font-semibold;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+  }
+
+  h1 { @apply text-4xl; }
+  h2 { @apply text-3xl; }
+  h3 { @apply text-2xl; }
+  h4 { @apply text-xl; }
+  h5 { @apply text-lg; }
+  h6 { @apply text-base; }
+
+  /* DLS-workflow: Better paragraph spacing */
+  p {
+    @apply text-foreground-muted;
+    line-height: 1.6;
   }
 
   /* Ensure touch targets are accessible */
   button, a, [role="button"] {
     min-height: 44px;
     min-width: 44px;
+    /* DLS-workflow: Smooth transitions for all interactive elements */
+    transition: all var(--duration-normal) var(--easing);
+  }
+
+  /* DLS-workflow: Enhanced form elements */
+  input, textarea, select {
+    @apply bg-background-card text-foreground border border-border rounded-md;
+    transition: all var(--duration-normal) var(--easing);
+  }
+
+  input:focus, textarea:focus, select:focus {
+    @apply ring-2 ring-primary border-primary;
+    outline: none;
   }
 }
 
-/* Basic utility classes for original design system */
+/* DLS-workflow: Utility classes for clean, systematic design */
 @layer utilities {
   /* Hide scrollbar but allow scrolling */
   .scrollbar-hide {
@@ -68,5 +149,54 @@
   /* Tap highlight removal for cleaner mobile UX */
   .tap-highlight-none {
     -webkit-tap-highlight-color: transparent;
+  }
+
+  /* DLS-workflow: Subtle shadows (never heavier than specified) */
+  .shadow-dls {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+  }
+
+  .shadow-dls-lg {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* DLS-workflow: Generous spacing utilities */
+  .space-dls-section {
+    padding: var(--space-3xl) var(--space-xl);
+  }
+
+  .space-dls-card {
+    padding: var(--space-xl);
+  }
+
+  /* DLS-workflow: Subtle hover states */
+  .hover-dls {
+    transition: all var(--duration-normal) var(--easing);
+  }
+
+  .hover-dls:hover {
+    @apply bg-hover;
+  }
+
+  /* DLS-workflow: Focus states with proper accessibility */
+  .focus-dls {
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+
+  /* DLS-workflow: Button variants */
+  .btn-dls-primary {
+    @apply bg-primary text-foreground-inverse px-4 py-2 rounded-md font-medium hover-dls;
+  }
+
+  .btn-dls-primary:hover {
+    @apply bg-primary-dark;
+  }
+
+  .btn-dls-secondary {
+    @apply bg-background-card text-foreground border border-border px-4 py-2 rounded-md font-medium hover-dls;
+  }
+
+  .btn-dls-secondary:hover {
+    @apply bg-hover border-border-strong;
   }
 }
