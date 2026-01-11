@@ -48,7 +48,8 @@ Base prototype for the Calo Tracker app - a Vietnamese-focused calorie tracking 
 
 ### Stack
 - **Framework:** React 18 + TypeScript + Vite
-- **Styling:** Tailwind CSS v3
+- **Styling:** Tailwind CSS v4 + DLS-workflow design system
+- **Design System:** Inter typography, neutral color palette, systematic spacing
 - **Database:** sql.js (SQLite WASM) - browser-only persistence
 - **Routing:** react-router-dom v6
 - **UI Components:** Radix UI (dialogs, sheets)
