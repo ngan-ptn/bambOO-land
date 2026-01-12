@@ -61,10 +61,10 @@ export function usePartner(): UsePartnerReturn {
           setPrimaryUser(currentUser)
           setIsViewingPartner(false)
         } else if (link.partnerUserId === currentUser.id) {
-          // We're viewing as partner, load primary
+          // We're viewing as partner, load primary as "the other person"
           const primaryUserProfile = await getUserById(link.primaryUserId)
           setPrimaryUser(primaryUserProfile)
-          setPartner(currentUser)
+          setPartner(primaryUserProfile)  // Partner = "the other person" to log for
           setIsViewingPartner(true)
         }
       } catch (error) {
