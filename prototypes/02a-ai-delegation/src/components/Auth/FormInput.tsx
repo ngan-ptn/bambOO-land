@@ -27,10 +27,11 @@ export function FormInput({
     <div className="space-y-2">
       <label
         htmlFor={id}
-        className="block text-xs font-semibold text-foreground uppercase tracking-wide"
+        className="block text-xs font-semibold text-gray-900 uppercase tracking-wide"
       >
         {label}
       </label>
+      {/* DLS: Gray 100 bg, no border, focus shows border */}
       <input
         type={type}
         id={id}
@@ -38,10 +39,10 @@ export function FormInput({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         className={cn(
-          'w-full h-14 px-5 rounded-2xl border-2 transition-all',
-          'bg-white text-foreground placeholder:text-foreground-muted',
-          'focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/15',
-          error ? 'border-error bg-error/5' : 'border-border'
+          'w-full h-14 px-5 rounded-lg transition-all duration-200',
+          'bg-gray-100 text-gray-900 placeholder:text-gray-500',
+          'focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary',
+          error ? 'ring-2 ring-error bg-error/5' : ''
         )}
       />
       {error && (

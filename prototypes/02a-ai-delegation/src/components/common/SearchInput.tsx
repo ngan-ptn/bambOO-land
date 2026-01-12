@@ -80,19 +80,19 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
         className={cn(
           // Container styling: relative for icon positioning
           'relative flex items-center',
-          // Background and border matching design system
-          'bg-gray-10 border border-gray-20',
-          'rounded-input',
-          // Focus-within styling for accessibility
-          'focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-1',
-          'transition-shadow duration-150',
+          // DLS: Gray 100 background, no border, rounded-md
+          'bg-gray-100',
+          'rounded-md',
+          // DLS: Focus state - white bg with border-2 primary
+          'focus-within:bg-white focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-1',
+          'transition-all duration-200',
           className
         )}
       >
         {/* Search icon - left side */}
         <Search
           size={18}
-          className="absolute left-3 text-foreground-muted pointer-events-none"
+          className="absolute left-3 text-gray-500 pointer-events-none"
           aria-hidden="true"
         />
 
@@ -111,8 +111,8 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           className={cn(
             // Size and padding: account for icons on both sides, extra height for clear button spacing
             'w-full h-12 pl-10 pr-10',
-            // Typography
-            'text-body text-foreground placeholder:text-foreground-muted',
+            // DLS: Typography
+            'text-body text-gray-900 placeholder:text-gray-500',
             // Remove default input styling
             'bg-transparent border-none outline-none',
             // Touch target
@@ -120,7 +120,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
           )}
         />
 
-        {/* Clear button - only visible when there's text, subtle styling */}
+        {/* Clear button - only visible when there's text */}
         {hasValue && (
           <button
             type="button"
@@ -129,9 +129,10 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               'absolute right-3',
               'flex items-center justify-center',
               'w-5 h-5 rounded-full',
-              'text-foreground-muted hover:text-foreground',
-              'transition-colors duration-150',
-              'focus:outline-none focus:ring-2 focus:ring-ring'
+              // DLS: Scale on hover
+              'text-gray-400 hover:text-gray-900 hover:scale-110',
+              'transition-all duration-200',
+              'focus:outline-none focus:ring-2 focus:ring-primary'
             )}
             aria-label="Clear search"
           >

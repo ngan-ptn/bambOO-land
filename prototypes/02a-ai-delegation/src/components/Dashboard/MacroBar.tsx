@@ -44,19 +44,19 @@ export function MacroBar({
     <div className={cn('w-full', className)}>
       {/* Label row: macro name on left, value on right */}
       <div className="flex items-center justify-between mb-2">
-        <span className="text-body text-foreground font-medium">{label}</span>
-        <span className="text-caption text-foreground-muted">
+        <span className="text-body text-gray-900 font-medium">{label}</span>
+        <span className="text-caption text-gray-500">
           {Math.round(consumed)}{unit}
           {hasGoal && ` / ${goal}${unit}`}
         </span>
       </div>
 
-      {/* Progress bar container */}
-      <div className="h-3 bg-border rounded-pill overflow-hidden">
-        {/* Filled portion with animation */}
+      {/* DLS: Progress bar container - muted gray background */}
+      <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
+        {/* DLS: Filled portion with animation */}
         <div
           className={cn(
-            'h-full rounded-pill transition-[width] duration-700 ease-out',
+            'h-full rounded-full transition-[width] duration-700 ease-out',
             colorClass
           )}
           style={{ width: `${animatedWidth}%` }}

@@ -314,7 +314,7 @@ export function QuickAddPage({}: QuickAddPageProps) {
   )
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gray-50">
       {/* Main content - scrollable sections */}
       <main className="px-4 py-6 space-y-8">
         {/* Dashboard: progress ring + today's meals */}
@@ -326,7 +326,7 @@ export function QuickAddPage({}: QuickAddPageProps) {
 
         {/* Quick Add section: header + search bar on same row, search aligned right */}
         <div className="flex items-center justify-between gap-4">
-          <h2 className="text-title text-foreground shrink-0">Quick Add</h2>
+          <h2 className="text-title text-gray-900 font-bold shrink-0">Quick Add</h2>
           <FoodSearchBar
             value={query}
             onChange={handleSearchChange}

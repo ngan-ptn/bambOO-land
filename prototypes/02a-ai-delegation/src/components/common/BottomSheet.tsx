@@ -68,9 +68,8 @@ export function BottomSheet({
             'bottom-0 left-0 right-0 mx-auto w-full max-w-lg',
             // Desktop: same bottom alignment to avoid extra gap under full-screen sheets.
             'md:bottom-0',
-            // Background and styling - rounded top corners, square bottom for edge-to-edge feel
-            'bg-background-card rounded-t-2xl rounded-b-none',
-            'shadow-xl',
+            // DLS: Flat styling - solid bg, no shadow, moderate radius
+            'bg-white rounded-t-xl rounded-b-none',
             // Padding: top and sides only, bottom padding kept minimal to avoid visible extra space
             'px-5 pt-6 pb-4',
             // Size variants
@@ -87,12 +86,12 @@ export function BottomSheet({
         >
           {/* Drag handle indicator - optional visual affordance */}
           {showDragHandle && (
-            <div className="w-10 h-1 bg-border rounded-full mx-auto mb-5" />
+            <div className="w-10 h-1 bg-gray-300 rounded-full mx-auto mb-5" />
           )}
 
           {/* Optional title - used for accessibility and visual header */}
           {title && (
-            <Dialog.Title className="text-title text-foreground text-center mb-6">
+            <Dialog.Title className="text-title text-gray-900 text-center mb-6 font-semibold">
               {title}
             </Dialog.Title>
           )}

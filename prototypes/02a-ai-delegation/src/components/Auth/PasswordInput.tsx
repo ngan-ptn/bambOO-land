@@ -62,6 +62,7 @@ export function PasswordInput({
 
   return (
     <div className="relative">
+      {/* DLS: Gray 100 bg, no border, focus shows ring */}
       <input
         type={showPassword ? 'text' : 'password'}
         id={id}
@@ -69,16 +70,17 @@ export function PasswordInput({
         onChange={handleChange}
         placeholder={placeholder}
         className={cn(
-          'w-full h-14 px-5 rounded-2xl border-2 transition-all',
-          'bg-white text-foreground placeholder:text-foreground-muted',
-          'focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/15',
-          error ? 'border-error bg-error/5' : 'border-border'
+          'w-full h-14 px-5 pr-12 rounded-lg transition-all duration-200',
+          'bg-gray-100 text-gray-900 placeholder:text-gray-500',
+          'focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary',
+          error ? 'ring-2 ring-error bg-error/5' : ''
         )}
       />
+      {/* DLS: Toggle button with scale on hover */}
       <button
         type="button"
         onClick={() => setShowPassword(!showPassword)}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-foreground-muted hover:text-foreground transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-gray-400 hover:text-gray-900 hover:scale-110 transition-all duration-200"
       >
         {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
       </button>
@@ -86,14 +88,14 @@ export function PasswordInput({
       {/* Password Strength Indicator */}
       {showStrength && value && (
         <div className="mt-3">
-          {/* Strength Bars */}
+          {/* DLS: Strength Bars - solid colors */}
           <div className="flex gap-2 mb-1">
             {[1, 2, 3, 4].map((bar) => (
               <div
                 key={bar}
                 className={cn(
-                  'flex-1 h-1 rounded-full transition-all duration-300',
-                  bar <= strength ? strengthInfo.colorClass : 'bg-border'
+                  'flex-1 h-1 rounded-full transition-all duration-200',
+                  bar <= strength ? strengthInfo.colorClass : 'bg-gray-200'
                 )}
               />
             ))}
@@ -102,7 +104,7 @@ export function PasswordInput({
           {/* Strength Label */}
           <p
             className={cn(
-              'text-caption transition-colors duration-300',
+              'text-caption transition-colors duration-200',
               strength <= 1 && 'text-error',
               strength === 2 && 'text-warning',
               strength >= 3 && 'text-primary'

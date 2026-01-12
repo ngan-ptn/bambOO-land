@@ -48,14 +48,15 @@ export function LoginScreen() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-5 bg-gradient-to-b from-[#E8E4DE] to-[#D8D4CE]">
-      <div className="w-full max-w-[440px] bg-background rounded-3xl shadow-xl p-12">
+    <div className="min-h-screen flex items-center justify-center p-5 bg-gray-100">
+      <div className="w-full max-w-[440px] bg-white rounded-xl p-12">
         <div className="text-center mb-10">
-          <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#F0F5EE] to-[#E8F0E6] flex items-center justify-center text-5xl">
+          {/* DLS: Solid color circle instead of gradient */}
+          <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center text-5xl">
             👋
           </div>
-          <h1 className="text-3xl font-bold text-foreground mb-2">Chào mừng trở lại!</h1>
-          <p className="text-foreground-muted">Đăng nhập để tiếp tục theo dõi</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Chào mừng trở lại!</h1>
+          <p className="text-gray-500">Đăng nhập để tiếp tục theo dõi</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -70,7 +71,7 @@ export function LoginScreen() {
           />
 
           <div className="space-y-2">
-            <label className="block text-xs font-semibold text-foreground uppercase tracking-wide">
+            <label className="block text-xs font-semibold text-gray-900 uppercase tracking-wide">
               Mật khẩu
             </label>
             <PasswordInput
@@ -96,17 +97,18 @@ export function LoginScreen() {
               id="remember-me"
               checked={rememberMe}
               onChange={(e) => setRememberMe(e.target.checked)}
-              className="w-6 h-6 rounded-lg border-2 border-border checked:bg-primary checked:border-primary cursor-pointer"
+              className="w-6 h-6 rounded-md border-2 border-gray-300 checked:bg-primary checked:border-primary cursor-pointer"
             />
-            <label htmlFor="remember-me" className="text-foreground cursor-pointer">
+            <label htmlFor="remember-me" className="text-gray-900 cursor-pointer">
               Ghi nhớ đăng nhập
             </label>
           </div>
 
+          {/* DLS: Primary button - solid bg, scale on hover */}
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full h-14 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full h-14 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
               <>
@@ -124,7 +126,7 @@ export function LoginScreen() {
           </button>
         </form>
 
-        <p className="text-center mt-6 text-foreground-muted">
+        <p className="text-center mt-6 text-gray-500">
           Chưa có tài khoản?{' '}
           <button
             onClick={() => navigate('/register')}

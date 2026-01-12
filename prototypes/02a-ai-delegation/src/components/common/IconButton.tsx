@@ -47,30 +47,30 @@ export function IconButton({
     lg: 'w-12 h-12 p-2.5', // 48px container, ~28px icon
   }
 
-  // Variant-specific styling
+  // DLS: Variant-specific styling with scale transforms
   const variantClasses = {
     default: [
-      // Neutral: subtle background on hover
-      'text-foreground-muted',
-      'hover:bg-gray-20 hover:text-foreground',
-      'active:bg-gray-30',
+      // Neutral: subtle background on hover with scale
+      'text-gray-500',
+      'hover:bg-gray-100 hover:text-gray-900 hover:scale-110',
+      'active:bg-gray-200',
     ],
     primary: [
-      // Primary: uses primary color
+      // Primary: uses primary color with scale
       'text-primary',
-      'hover:bg-primary/10 hover:text-primary-dark',
+      'hover:bg-primary/10 hover:text-primary-dark hover:scale-110',
       'active:bg-primary/20',
     ],
     danger: [
-      // Danger: uses error/warning color
+      // Danger: uses error color with scale
       'text-error',
-      'hover:bg-error/10 hover:text-error',
+      'hover:bg-error/10 hover:text-error hover:scale-110',
       'active:bg-error/20',
     ],
     ghost: [
-      // Ghost: no background, only text color change
-      'text-foreground-muted',
-      'hover:text-foreground',
+      // Ghost: no background, only text color change with scale
+      'text-gray-500',
+      'hover:text-gray-900 hover:scale-110',
       'active:opacity-70',
     ],
   }
@@ -82,16 +82,16 @@ export function IconButton({
       disabled={disabled}
       aria-label={ariaLabel}
       className={cn(
-        // Base: rounded, flex centering, transitions
+        // Base: rounded, flex centering, DLS snappy transitions
         'rounded-full',
         'flex items-center justify-center',
-        'transition-all duration-150',
+        'transition-all duration-200',
         // Size
         sizeClasses[size],
         // Variant styles
         variantClasses[variant],
-        // Focus: visible ring for keyboard navigation
-        'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+        // DLS: Focus ring with primary color
+        'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
         // Disabled state
         disabled && 'opacity-50 cursor-not-allowed pointer-events-none',
         // Touch target: ensure minimum 44x44px (handled by size, but explicit for safety)

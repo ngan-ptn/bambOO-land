@@ -58,24 +58,24 @@ export function Card({
   return (
     <div
       className={cn(
-        // Base card styling: background, border radius, shadow
-        'bg-background-card rounded-card shadow-card',
+        // DLS: Flat card styling - solid bg, no shadow
+        'bg-white rounded-lg',
         // Padding for content
         'p-4',
         // Variant-specific styles
         variant === 'interactive' && isClickable && [
-          // Interactive states: hover elevation, active scale, cursor pointer
-          'hover:shadow-md transition-shadow duration-150',
-          'active:scale-[0.98] transition-transform duration-100',
+          // DLS: Scale on hover, no shadows
+          'hover:scale-[1.02] hover:bg-gray-50 transition-all duration-200',
+          'active:scale-[0.98]',
           'cursor-pointer',
-          'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+          'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
         ],
         variant === 'expandable' && isClickable && [
-          // Expandable: same interactive styles plus transition for expansion
-          'hover:shadow-md transition-all duration-150',
-          'active:scale-[0.98] transition-transform duration-100',
+          // DLS: Scale on hover for expandable
+          'hover:scale-[1.02] hover:bg-gray-50 transition-all duration-200',
+          'active:scale-[0.98]',
           'cursor-pointer',
-          'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+          'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
         ],
         // Disabled state: reduced opacity, no pointer events
         disabled && 'opacity-50 cursor-not-allowed pointer-events-none',

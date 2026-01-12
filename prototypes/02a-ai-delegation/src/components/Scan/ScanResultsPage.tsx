@@ -77,23 +77,24 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirmMultiple
   }, [detectedItems, onConfirmMultiple])
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-10 bg-background/95 backdrop-blur-sm border-b border-border">
+    <div className="min-h-screen bg-gray-50">
+      {/* DLS: Header - flat, no shadow */}
+      <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
         <div className="px-5 py-4 flex items-center justify-between gap-3">
           <button
             type="button"
             onClick={onCancel}
             className={cn(
-              'text-body font-medium text-foreground',
-              'px-3 py-2 -my-2 -ml-3 rounded-pill',
-              'hover:bg-border/50 transition-colors',
-              'focus:outline-none focus:ring-2 focus:ring-ring'
+              'text-sm font-medium text-gray-900',
+              'px-3 py-2 -my-2 -ml-3 rounded-lg',
+              'hover:bg-gray-100 hover:scale-105 transition-all duration-200',
+              'focus:outline-none focus:ring-2 focus:ring-primary'
             )}
           >
             Cancel
           </button>
 
-          <h1 className="text-title text-foreground">
+          <h1 className="text-lg font-bold text-gray-900">
             Results
           </h1>
 
@@ -105,26 +106,29 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirmMultiple
         {!isDone ? (
           <section className="space-y-4">
             <div>
-              <p className="text-body text-foreground">Analyzing photo...</p>
-              <p className="text-caption text-foreground-muted mt-1">
+              <p className="text-sm text-gray-900">Analyzing photo...</p>
+              <p className="text-xs text-gray-500 mt-1">
                 {progress}%
               </p>
             </div>
 
-            <div className="w-full h-2 bg-border rounded-full overflow-hidden">
+            {/* DLS: Progress bar - solid color */}
+            <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
               <div
-                className="h-full bg-primary rounded-full transition-all duration-150"
+                className="h-full bg-primary rounded-full transition-all duration-200"
                 style={{ width: `${progress}%` }}
               />
             </div>
 
+            {/* DLS: Secondary button */}
             <button
               type="button"
               onClick={onManual}
               className={cn(
-                'w-full py-3 rounded-pill',
-                'bg-background-card border border-border text-foreground',
-                'text-body font-medium'
+                'w-full py-3 rounded-lg',
+                'bg-white text-gray-900',
+                'text-sm font-medium',
+                'hover:bg-gray-100 hover:scale-[1.02] transition-all duration-200'
               )}
             >
               Use manual entry
@@ -134,15 +138,15 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirmMultiple
           <section className="space-y-4">
             {/* Summary header */}
             <div className="flex items-center justify-between">
-              <p className="text-body text-foreground">
+              <p className="text-sm text-gray-900">
                 Found {detectedItems.length} item{detectedItems.length !== 1 ? 's' : ''}
               </p>
-              <p className="text-body font-medium text-primary">
+              <p className="text-sm font-semibold text-primary">
                 {totalCalories} kcal
               </p>
             </div>
 
-            {/* Detected items list */}
+            {/* DLS: Detected items list - flat cards */}
             <div className="space-y-2">
               {detectedItems.map((item, index) => {
                 const level = getConfidenceLevel(item.confidence)
@@ -153,26 +157,26 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirmMultiple
                   <div
                     key={`${item.food.id}-${index}`}
                     className={cn(
-                      'bg-background-card border rounded-card p-4',
-                      'transition-colors',
-                      item.selected ? 'border-primary' : 'border-border'
+                      'bg-white rounded-lg p-4',
+                      'transition-all duration-200',
+                      item.selected ? 'ring-2 ring-primary' : ''
                     )}
                   >
                     <div className="flex items-start gap-3">
-                      {/* Checkbox */}
+                      {/* DLS: Checkbox */}
                       <button
                         type="button"
                         onClick={() => toggleItem(index)}
                         className={cn(
                           'mt-0.5 w-5 h-5 rounded border-2 flex items-center justify-center flex-shrink-0',
-                          'transition-colors',
+                          'transition-all duration-200',
                           item.selected
                             ? 'bg-primary border-primary'
-                            : 'bg-transparent border-border'
+                            : 'bg-transparent border-gray-300'
                         )}
                       >
                         {item.selected && (
-                          <svg className="w-3 h-3 text-primary-foreground" viewBox="0 0 12 12" fill="none">
+                          <svg className="w-3 h-3 text-white" viewBox="0 0 12 12" fill="none">
                             <path d="M2 6L5 9L10 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         )}
@@ -182,19 +186,19 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirmMultiple
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2">
                           <p className={cn(
-                            'text-body font-medium truncate',
-                            item.selected ? 'text-foreground' : 'text-foreground-muted'
+                            'text-sm font-medium truncate',
+                            item.selected ? 'text-gray-900' : 'text-gray-500'
                           )}>
                             {item.food.name_vi}
                           </p>
                           <span className={cn(
-                            'text-caption px-2 py-0.5 rounded-full border flex-shrink-0',
+                            'text-xs px-2 py-0.5 rounded-full border flex-shrink-0',
                             badge.color
                           )}>
                             {badge.label}
                           </span>
                         </div>
-                        <p className="text-caption text-foreground-muted mt-1">
+                        <p className="text-xs text-gray-500 mt-1">
                           Portion {item.portion} · {portionKcal} kcal
                         </p>
                       </div>
@@ -205,8 +209,8 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirmMultiple
                         onClick={() => onEditItem(item, index)}
                         className={cn(
                           'p-2 -m-2 rounded-full',
-                          'text-foreground-muted hover:text-foreground',
-                          'hover:bg-border/50 transition-colors'
+                          'text-gray-400 hover:text-gray-900',
+                          'hover:bg-gray-100 hover:scale-110 transition-all duration-200'
                         )}
                       >
                         <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
@@ -219,18 +223,19 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirmMultiple
               })}
             </div>
 
-            {/* Action buttons */}
+            {/* DLS: Action buttons */}
             <div className="pt-2 space-y-3">
               <button
                 type="button"
                 onClick={handleConfirm}
                 disabled={selectedCount === 0}
                 className={cn(
-                  'w-full py-4 rounded-pill',
-                  'bg-primary text-primary-foreground',
-                  'text-body font-medium',
-                  'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-                  selectedCount === 0 && 'opacity-50 cursor-not-allowed'
+                  'w-full h-14 rounded-lg',
+                  'bg-primary text-white',
+                  'text-sm font-semibold',
+                  'hover:bg-primary-dark hover:scale-105 transition-all duration-200',
+                  'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
+                  selectedCount === 0 && 'opacity-50 cursor-not-allowed hover:scale-100'
                 )}
               >
                 Log {selectedCount} item{selectedCount !== 1 ? 's' : ''} ({totalCalories} kcal)
@@ -240,9 +245,10 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirmMultiple
                 type="button"
                 onClick={onManual}
                 className={cn(
-                  'w-full py-3 rounded-pill',
-                  'bg-background-card border border-border text-foreground',
-                  'text-body font-medium'
+                  'w-full py-3 rounded-lg',
+                  'bg-white text-gray-900',
+                  'text-sm font-medium',
+                  'hover:bg-gray-100 hover:scale-[1.02] transition-all duration-200'
                 )}
               >
                 Add more items manually

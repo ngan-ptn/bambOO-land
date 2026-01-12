@@ -80,7 +80,7 @@ export function ProfileSwitcher({
 
   return (
     <div className="relative" ref={dropdownRef}>
-      {/* Avatar button */}
+      {/* DLS: Avatar button - solid color, scale on hover */}
       <button
         type="button"
         onClick={handleToggle}
@@ -88,26 +88,27 @@ export function ProfileSwitcher({
         aria-haspopup="listbox"
         className={cn(
           'w-9 h-9 rounded-full flex items-center justify-center',
-          'text-body font-medium',
-          'transition-all duration-150',
-          'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+          'text-sm font-medium',
+          'transition-all duration-200',
+          'hover:scale-110',
+          'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
           isViewingPartner
-            ? 'bg-purple-100 text-purple-700 border-2 border-purple-300'
-            : 'bg-primary/10 text-primary border-2 border-primary/30'
+            ? 'bg-accent text-white'
+            : 'bg-primary text-white'
         )}
       >
         {getInitial(activeUser)}
       </button>
 
-      {/* Dropdown */}
+      {/* DLS: Dropdown - flat, no shadow, rounded-lg */}
       {isOpen && (
         <div
           role="listbox"
           className={cn(
             'absolute right-0 top-full mt-2 w-56',
-            'bg-background-card border border-border rounded-card shadow-lg',
+            'bg-white border border-gray-200 rounded-lg',
             'py-1 z-50',
-            'animate-in fade-in-0 zoom-in-95 duration-150'
+            'animate-in fade-in-0 zoom-in-95 duration-200'
           )}
         >
           {/* Current user option */}
@@ -118,7 +119,7 @@ export function ProfileSwitcher({
             onClick={handleSwitchToSelf}
             className={cn(
               'w-full px-4 py-3 flex items-center gap-3',
-              'hover:bg-border/50 transition-colors',
+              'hover:bg-gray-50 transition-all duration-200',
               'text-left',
               !isViewingPartner && 'bg-primary/5'
             )}
@@ -126,22 +127,22 @@ export function ProfileSwitcher({
             <span
               className={cn(
                 'w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0',
-                'text-caption font-medium',
-                'bg-primary/10 text-primary'
+                'text-xs font-medium',
+                'bg-primary text-white'
               )}
             >
               {getInitial(currentUser)}
             </span>
             <div className="flex-1 min-w-0">
-              <p className="text-body font-medium text-foreground truncate">
+              <p className="text-sm font-medium text-gray-900 truncate">
                 {getDisplayName(currentUser)}
               </p>
-              <p className="text-caption text-foreground-muted">
+              <p className="text-xs text-gray-500">
                 {!isViewingPartner ? 'Active' : 'Tap to switch'}
               </p>
             </div>
             {!isViewingPartner && (
-              <span className="text-primary text-caption">✓</span>
+              <span className="text-primary text-xs">✓</span>
             )}
           </button>
 
@@ -154,30 +155,30 @@ export function ProfileSwitcher({
               onClick={handleSwitchToPartner}
               className={cn(
                 'w-full px-4 py-3 flex items-center gap-3',
-                'hover:bg-border/50 transition-colors',
+                'hover:bg-gray-50 transition-all duration-200',
                 'text-left',
-                isViewingPartner && 'bg-purple-50'
+                isViewingPartner && 'bg-accent/5'
               )}
             >
               <span
                 className={cn(
                   'w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0',
-                  'text-caption font-medium',
-                  'bg-purple-100 text-purple-700'
+                  'text-xs font-medium',
+                  'bg-accent text-white'
                 )}
               >
                 {getInitial(partner)}
               </span>
               <div className="flex-1 min-w-0">
-                <p className="text-body font-medium text-foreground truncate">
+                <p className="text-sm font-medium text-gray-900 truncate">
                   {getDisplayName(partner)}
                 </p>
-                <p className="text-caption text-foreground-muted">
+                <p className="text-xs text-gray-500">
                   {isViewingPartner ? 'Active' : 'Tap to switch'}
                 </p>
               </div>
               {isViewingPartner && (
-                <span className="text-purple-600 text-caption">✓</span>
+                <span className="text-accent text-xs">✓</span>
               )}
             </button>
           )}
@@ -185,30 +186,30 @@ export function ProfileSwitcher({
           {/* Add partner option (if no partner) */}
           {!partner && onAddPartner && (
             <>
-              <div className="border-t border-border my-1" />
+              <div className="border-t border-gray-200 my-1" />
               <button
                 type="button"
                 onClick={handleAddPartner}
                 className={cn(
                   'w-full px-4 py-3 flex items-center gap-3',
-                  'hover:bg-border/50 transition-colors',
+                  'hover:bg-gray-50 transition-all duration-200',
                   'text-left'
                 )}
               >
                 <span
                   className={cn(
                     'w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0',
-                    'text-caption font-medium',
-                    'bg-border text-foreground-muted'
+                    'text-xs font-medium',
+                    'bg-gray-100 text-gray-500'
                   )}
                 >
                   +
                 </span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-body font-medium text-foreground">
+                  <p className="text-sm font-medium text-gray-900">
                     Add Partner
                   </p>
-                  <p className="text-caption text-foreground-muted">
+                  <p className="text-xs text-gray-500">
                     Share meal logging
                   </p>
                 </div>
@@ -219,7 +220,7 @@ export function ProfileSwitcher({
           {/* Settings / Profile option */}
           {onGoToSettings && (
             <>
-              <div className="border-t border-border my-1" />
+              <div className="border-t border-gray-200 my-1" />
               <button
                 type="button"
                 onClick={() => {
@@ -228,24 +229,24 @@ export function ProfileSwitcher({
                 }}
                 className={cn(
                   'w-full px-4 py-3 flex items-center gap-3',
-                  'hover:bg-border/50 transition-colors',
+                  'hover:bg-gray-50 transition-all duration-200',
                   'text-left'
                 )}
               >
                 <span
                   className={cn(
                     'w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0',
-                    'text-caption',
-                    'bg-border text-foreground-muted'
+                    'text-xs',
+                    'bg-gray-100 text-gray-500'
                   )}
                 >
                   ⚙️
                 </span>
                 <div className="flex-1 min-w-0">
-                  <p className="text-body font-medium text-foreground">
+                  <p className="text-sm font-medium text-gray-900">
                     Settings
                   </p>
-                  <p className="text-caption text-foreground-muted">
+                  <p className="text-xs text-gray-500">
                     Profile & preferences
                   </p>
                 </div>

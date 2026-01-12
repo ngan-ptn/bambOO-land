@@ -24,25 +24,28 @@ export function NameScreen() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-5 bg-gradient-to-b from-[#E8E4DE] to-[#D8D4CE]">
-      <div className="w-full max-w-[440px] bg-background rounded-3xl shadow-xl p-12">
+    <div className="min-h-screen flex items-center justify-center p-5 bg-gray-100">
+      {/* DLS: Flat card - no shadow */}
+      <div className="w-full max-w-[440px] bg-white rounded-xl p-12">
+        {/* DLS: Progress dots - solid colors */}
         <div className="flex justify-center gap-2 mb-8">
           <div className="w-2 h-2 rounded-full bg-primary"></div>
           <div className="w-6 h-2 rounded-full bg-primary"></div>
-          <div className="w-2 h-2 rounded-full bg-border"></div>
-          <div className="w-2 h-2 rounded-full bg-border"></div>
+          <div className="w-2 h-2 rounded-full bg-gray-200"></div>
+          <div className="w-2 h-2 rounded-full bg-gray-200"></div>
         </div>
 
         <div className="text-center mb-10">
           <div className="text-6xl mb-6">👋</div>
-          <h1 className="text-3xl font-bold text-foreground mb-2">Bạn tên gì?</h1>
-          <p className="text-foreground-muted">Tên này sẽ hiển thị trên ứng dụng</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Bạn tên gì?</h1>
+          <p className="text-gray-500">Tên này sẽ hiển thị trên ứng dụng</p>
         </div>
 
         <div className="space-y-2 mb-8">
-          <label className="block text-xs font-semibold text-foreground uppercase tracking-wide">
+          <label className="block text-xs font-semibold text-gray-900 uppercase tracking-wide">
             Tên hiển thị
           </label>
+          {/* DLS: Gray bg input, no border, focus shows ring */}
           <input
             type="text"
             value={name}
@@ -51,15 +54,16 @@ export function NameScreen() {
               setError('')
             }}
             placeholder="Ví dụ: Minh"
-            className="w-full h-14 px-5 rounded-2xl border-2 border-border bg-white text-foreground placeholder:text-foreground-muted focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/15 transition-all"
+            className="w-full h-14 px-5 rounded-lg bg-gray-100 text-gray-900 placeholder:text-gray-500 focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary transition-all duration-200"
           />
           {error && <p className="text-sm text-error">{error}</p>}
         </div>
 
+        {/* DLS: Primary button - solid bg, scale on hover */}
         <button
           onClick={handleContinue}
           disabled={!name.trim()}
-          className="w-full h-14 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="w-full h-14 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           Tiếp tục
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

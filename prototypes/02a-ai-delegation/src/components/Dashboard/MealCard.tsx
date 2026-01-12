@@ -22,23 +22,24 @@ export function MealCard({ entry, onDelete }: MealCardProps) {
   return (
     <div
       className={cn(
-        'bg-background-card rounded-card shadow-card p-4',
+        // DLS: Flat card - solid bg, no shadow
+        'bg-white rounded-lg p-4',
         'flex items-center justify-between gap-3',
-        'transition-colors duration-150'
+        'transition-all duration-200'
       )}
     >
       {/* Meal info: name, portion badge, and calories */}
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2">
-          <p className="text-body text-foreground font-medium truncate">
+          <p className="text-body text-gray-900 font-medium truncate">
             {entry.name_vi}
           </p>
-          {/* Portion size badge */}
-          <span className="text-caption bg-tertiary/20 text-tertiary-dark px-2 py-0.5 rounded-pill shrink-0">
+          {/* DLS: Portion size badge - accent color */}
+          <span className="text-caption bg-accent/20 text-accent-dark px-2 py-0.5 rounded-md shrink-0 font-medium">
             {entry.portion}
           </span>
         </div>
-        <p className="text-caption text-foreground-muted mt-0.5">
+        <p className="text-caption text-gray-500 mt-0.5">
           {entry.kcal} kcal · {formatTime(entry.timestamp)}
         </p>
       </div>
@@ -49,10 +50,11 @@ export function MealCard({ entry, onDelete }: MealCardProps) {
         onClick={handleDeleteClick}
         className={cn(
           'flex items-center justify-center',
-          'p-2 rounded-pill transition-all duration-150',
-          'focus:outline-none focus:ring-2 focus:ring-ring',
+          // DLS: Scale on hover, snappy transition
+          'p-2 rounded-full transition-all duration-200',
+          'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
           'tap-highlight-none',
-          'text-foreground-muted hover:text-error hover:bg-error/10'
+          'text-gray-400 hover:text-error hover:bg-error/10 hover:scale-110'
         )}
         aria-label="Delete meal"
       >

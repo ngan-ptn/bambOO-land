@@ -105,18 +105,19 @@ export function PortionPicker({
           className={cn(
             'inline-flex items-center justify-center',
             'w-8 h-8 rounded-full',
-            'transition-all duration-150',
-            'hover:bg-gray-100 active:scale-95',
-            'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
+            // DLS: Scale on hover, snappy transition
+            'transition-all duration-200',
+            'hover:bg-gray-100 hover:scale-110 active:scale-95',
+            'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2'
           )}
         >
           <Heart
             size={20}
             className={cn(
-              'transition-colors duration-150',
+              'transition-colors duration-200',
               isFavorite
                 ? 'fill-red-500 text-red-500'
-                : 'fill-none text-foreground-muted'
+                : 'fill-none text-gray-400'
             )}
           />
         </button>
@@ -145,17 +146,17 @@ export function PortionPicker({
               type="button"
               onClick={() => setSelectedPortion(size)}
               className={cn(
-                // Pill base: rounded, generous padding for touch
+                // DLS: Flat button, rounded-lg, generous padding
                 'flex-1 max-w-[140px] py-4 px-4',
-                'rounded-pill',
-                'transition-all duration-150',
-                'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+                'rounded-lg',
+                'transition-all duration-200',
+                'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
                 // Touch target compliance
                 'min-h-[72px] tap-highlight-none',
-                // Selected vs unselected states
+                // DLS: Scale on hover, selected vs unselected states
                 isSelected
-                  ? 'bg-primary text-primary-foreground'
-                  : 'bg-background-card border border-border text-foreground hover:border-primary'
+                  ? 'bg-primary text-white hover:scale-105'
+                  : 'bg-gray-100 text-gray-900 hover:bg-gray-200 hover:scale-105'
               )}
             >
               {/* Size label - large and prominent */}
@@ -165,7 +166,7 @@ export function PortionPicker({
               {/* Calorie info - smaller caption */}
               <span className={cn(
                 'block text-caption',
-                isSelected ? 'opacity-90' : 'text-foreground-muted'
+                isSelected ? 'opacity-90' : 'text-gray-500'
               )}>
                 {nutrition.kcal} kcal
               </span>
@@ -175,31 +176,32 @@ export function PortionPicker({
       </div>
 
       {/* Serving size hint */}
-      <p className="text-caption text-foreground-muted text-center mt-4">
+      <p className="text-caption text-gray-500 text-center mt-4">
         {food.serving}
       </p>
 
       {/* Log for Partner toggle (only if partner exists) */}
       {partnerName && (
-        <div className="mt-6 pt-4 border-t border-border">
+        <div className="mt-6 pt-4 border-t border-gray-200">
           {/* Toggle row */}
           <button
             type="button"
             onClick={() => setLogForPartner(!logForPartner)}
             className="w-full flex items-center justify-between py-2"
           >
-            <span className="text-body text-foreground">
+            <span className="text-body text-gray-900">
               Also log for {partnerName}
             </span>
+            {/* DLS: Toggle switch - flat design */}
             <span
               className={cn(
-                'w-11 h-6 rounded-full transition-colors relative',
-                logForPartner ? 'bg-primary' : 'bg-border'
+                'w-11 h-6 rounded-full transition-colors duration-200 relative',
+                logForPartner ? 'bg-primary' : 'bg-gray-300'
               )}
             >
               <span
                 className={cn(
-                  'absolute top-1 w-4 h-4 rounded-full bg-white shadow transition-transform',
+                  'absolute top-1 w-4 h-4 rounded-full bg-white transition-transform duration-200',
                   logForPartner ? 'translate-x-6' : 'translate-x-1'
                 )}
               />
@@ -209,7 +211,7 @@ export function PortionPicker({
           {/* Partner portion selection (shown when toggle ON) */}
           {logForPartner && (
             <div className="mt-3 space-y-2">
-              <p className="text-caption text-foreground-muted">
+              <p className="text-caption text-gray-500">
                 {partnerName}'s portion
               </p>
               <div className="flex gap-2">
@@ -223,11 +225,12 @@ export function PortionPicker({
                       type="button"
                       onClick={() => setPartnerPortion(size)}
                       className={cn(
-                        'flex-1 py-2 px-3 rounded-pill text-caption font-medium',
-                        'border transition-colors',
+                        // DLS: Flat buttons with scale on hover
+                        'flex-1 py-2 px-3 rounded-lg text-caption font-medium',
+                        'transition-all duration-200 hover:scale-105',
                         isSelected
-                          ? 'bg-purple-100 text-purple-700 border-purple-300'
-                          : 'bg-background-card text-foreground border-border hover:border-purple-300'
+                          ? 'bg-secondary text-white'
+                          : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
                       )}
                     >
                       {label} · {nutrition.kcal}
@@ -240,16 +243,16 @@ export function PortionPicker({
         </div>
       )}
 
-      {/* Log Meal button */}
+      {/* DLS: Primary button - solid bg, scale on hover */}
       <button
         type="button"
         onClick={handleSubmit}
         className={cn(
-          'w-full py-4 rounded-pill mt-6',
-          'bg-primary text-primary-foreground',
-          'text-body font-medium',
-          'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-          'hover:bg-primary-dark active:scale-[0.98] transition-all'
+          'w-full py-4 rounded-lg mt-6',
+          'bg-primary text-white',
+          'text-body font-semibold',
+          'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
+          'hover:bg-primary-dark hover:scale-105 active:scale-[0.98] transition-all duration-200'
         )}
       >
         {logForPartner

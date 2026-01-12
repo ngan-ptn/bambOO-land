@@ -28,10 +28,10 @@ export function DailySummary({ summary, goals, className }: DailySummaryProps) {
         <div className="text-6xl mb-4" role="img" aria-label="Bowl of food">
           🍜
         </div>
-        <p className="text-body text-foreground-muted text-center">
+        <p className="text-body text-gray-500 text-center">
           Hãy thêm món đầu tiên...
         </p>
-        <p className="text-caption text-foreground-muted mt-1">
+        <p className="text-caption text-gray-400 mt-1">
           Tap a food below to start tracking
         </p>
       </div>

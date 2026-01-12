@@ -47,7 +47,7 @@ export function ProgressRing({ consumed, goal, className }: ProgressRingProps) {
         viewBox={`0 0 ${RING_SIZE} ${RING_SIZE}`}
         className="transform -rotate-90"
       >
-        {/* Background ring - subtle border color */}
+        {/* DLS: Background ring - muted gray */}
         <circle
           cx={RING_SIZE / 2}
           cy={RING_SIZE / 2}
@@ -55,7 +55,7 @@ export function ProgressRing({ consumed, goal, className }: ProgressRingProps) {
           fill="none"
           stroke="currentColor"
           strokeWidth={STROKE_WIDTH}
-          className="text-border"
+          className="text-gray-200"
         />
         
         {/* Progress ring - primary green, animates via CSS transition */}
@@ -79,10 +79,10 @@ export function ProgressRing({ consumed, goal, className }: ProgressRingProps) {
 
       {/* Center content: consumed kcal and label */}
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-headline text-foreground">
+        <span className="text-headline text-gray-900 font-bold">
           {consumed.toLocaleString('vi-VN')}
         </span>
-        <span className="text-caption text-foreground-muted">
+        <span className="text-caption text-gray-500">
           {isExceeded ? (
             // Show excess in neutral color (not red per spec)
             <span>+{(consumed - goal).toLocaleString('vi-VN')} kcal</span>

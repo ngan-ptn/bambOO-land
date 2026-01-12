@@ -49,8 +49,10 @@ export function CaloriesScreen() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-5 bg-gradient-to-b from-[#E8E4DE] to-[#D8D4CE]">
-      <div className="w-full max-w-[440px] bg-background rounded-3xl shadow-xl p-12">
+    <div className="min-h-screen flex items-center justify-center p-5 bg-gray-100">
+      {/* DLS: Flat card - no shadow */}
+      <div className="w-full max-w-[440px] bg-white rounded-xl p-12">
+        {/* DLS: Progress dots - solid colors */}
         <div className="flex justify-center gap-2 mb-8">
           <div className="w-2 h-2 rounded-full bg-primary"></div>
           <div className="w-2 h-2 rounded-full bg-primary"></div>
@@ -60,24 +62,25 @@ export function CaloriesScreen() {
 
         <div className="text-center mb-10">
           <div className="text-6xl mb-6">📊</div>
-          <h1 className="text-3xl font-bold text-foreground mb-2">Mục tiêu hàng ngày</h1>
-          <p className="text-foreground-muted">Điều chỉnh lượng calo phù hợp với bạn</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Mục tiêu hàng ngày</h1>
+          <p className="text-gray-500">Điều chỉnh lượng calo phù hợp với bạn</p>
         </div>
 
         <div className="text-center mb-8">
           <div className="text-6xl font-bold text-primary mb-1">{calories}</div>
-          <div className="text-foreground-muted">kcal / ngày</div>
+          <div className="text-gray-500">kcal / ngày</div>
         </div>
 
+        {/* DLS: Flat slider - solid color, no shadow */}
         <div className="mb-8">
           <div className="relative mb-3">
-            <div className="h-2 bg-border rounded-full">
+            <div className="h-2 bg-gray-200 rounded-full">
               <div
-                className="absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-primary-light rounded-full transition-all pointer-events-none"
+                className="absolute top-0 left-0 h-full bg-primary rounded-full transition-all duration-200 pointer-events-none"
                 style={{ width: `${percentage}%` }}
               />
               <div
-                className="absolute top-1/2 -translate-y-1/2 w-7 h-7 bg-white border-3 border-primary rounded-full shadow-md pointer-events-none"
+                className="absolute top-1/2 -translate-y-1/2 w-7 h-7 bg-white border-[3px] border-primary rounded-full pointer-events-none"
                 style={{ left: `${percentage}%`, transform: 'translate(-50%, -50%)' }}
               />
             </div>
@@ -90,16 +93,17 @@ export function CaloriesScreen() {
               className="absolute top-0 left-0 w-full h-2 opacity-0 cursor-pointer"
             />
           </div>
-          <div className="flex justify-between text-xs text-foreground-muted">
+          <div className="flex justify-between text-xs text-gray-500">
             <span>1200</span>
             <span>2100</span>
             <span>3000</span>
           </div>
         </div>
 
+        {/* DLS: Primary button - solid bg, scale on hover */}
         <button
           onClick={handleComplete}
-          className="w-full h-14 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+          className="w-full h-14 bg-primary text-white font-semibold rounded-lg hover:bg-primary-dark hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2"
         >
           Hoàn thành
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

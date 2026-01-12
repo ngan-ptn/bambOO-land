@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  // Enable dark mode via class strategy (not used in MVP but ready for future)
   darkMode: ["class"],
   content: [
     "./index.html",
@@ -8,181 +7,114 @@ export default {
   ],
   theme: {
     extend: {
-      // Design system colors: warm, wellness-inspired palette
+      // DLS Flat Design Color System
       colors: {
-        // === LAYER 1: Pure Color Scales ===
+        // === Core Palette ===
+        background: '#FFFFFF',
+        foreground: '#111827',
 
-        // Mindful Brown - primary neutrals, titles, icons, borders
-        brown: {
-          10: '#F7F4F2',
-          20: '#EBDDD9',
-          30: '#D6C2B8',
-          40: '#C0A091',
-          50: '#AC836C',
-          60: '#926247',
-          70: '#704A33',
-          80: '#4F3422',
-          90: '#372315',
-          100: '#372315',
-        },
-
-        // Optimistic Gray - backgrounds, dividers, disabled states
-        gray: {
-          10: '#F5F5F5',
-          20: '#E1E1E0',
-          30: '#C9C7C5',
-          40: '#ACA9A5',
-          50: '#8A8680', // Interpolated value (original #9B2B86 was typo)
-          60: '#736B66',
-          70: '#5A545E',
-          80: '#3F3C36',
-          90: '#292723',
-          100: '#161513',
-        },
-
-        // Serenity Green - success, healthy range, add-actions
-        green: {
-          10: '#F2F5EB',
-          20: '#E5EAD7',
-          30: '#CFD9B5',
-          40: '#B4C48D',
-          50: '#9BB068',
-          60: '#7D944D',
-          70: '#5A6B38',
-          80: '#3D4A26',
-          90: '#29321A',
-          100: '#191E10',
-        },
-
-        // Empathy Orange - warnings, calorie highs, charts, CTAs
-        orange: {
-          10: '#FFEEE2',
-          20: '#FFC89E',
-          30: '#F6A360',
-          40: '#ED7E1C',
-          50: '#C96100',
-          60: '#AA5500',
-          70: '#894700',
-          80: '#663600',
-          90: '#432500',
-          100: '#2E1200',
-        },
-
-        // Zen Yellow - highlights, badges, subtle attention cues
-        yellow: {
-          10: '#FFF4E0',
-          20: '#FFF0E0',
-          30: '#FFE0C2',
-          40: '#FFF0C5',
-          50: '#FFBD1A',
-          60: '#E0A500',
-          70: '#A37A00',
-          80: '#705600',
-          90: '#4D3C00',
-          100: '#2E2500',
-        },
-
-        // Kind Purple - optional accent (weekly insights, achievements)
-        purple: {
-          10: '#F6F1FF',
-          20: '#DDD1FF',
-          30: '#C2B1FF',
-          40: '#A694F5',
-          50: '#8978E3',
-          60: '#6C5FC8',
-          70: '#5349A5',
-          80: '#3C357C',
-          90: '#292350',
-          100: '#161324',
-        },
-
-        // === LAYER 2: Semantic Tokens ===
-
-        // Primary: Serenity Green for CTAs, success states
+        // Primary: Action color (Blue 500)
         primary: {
-          DEFAULT: '#7D944D', // green-60
-          light: '#9BB068',   // green-50
-          dark: '#5A6B38',    // green-70
+          DEFAULT: '#3B82F6',
+          light: '#60A5FA',
+          dark: '#2563EB',
           foreground: '#FFFFFF',
         },
 
-        // Secondary: Empathy Orange for highlights, warnings
+        // Secondary: Supporting accent (Emerald 500)
         secondary: {
-          DEFAULT: '#AA5500', // orange-60
-          light: '#ED7E1C',   // orange-40
-          dark: '#894700',    // orange-70
+          DEFAULT: '#10B981',
+          light: '#34D399',
+          dark: '#059669',
           foreground: '#FFFFFF',
         },
 
-        // Tertiary: Kind Purple for accents
-        tertiary: {
-          DEFAULT: '#6C5FC8', // purple-60
-          light: '#8978E3',   // purple-50
-          dark: '#5349A5',    // purple-70
+        // Accent: Highlights/badges (Amber 500)
+        accent: {
+          DEFAULT: '#F59E0B',
+          light: '#FBBF24',
+          dark: '#D97706',
+          foreground: '#FFFFFF',
         },
 
-        // Background: Optimistic Gray base
-        background: {
-          DEFAULT: '#F5F5F5', // gray-10
-          card: '#FFFFFF',
+        // Muted: Secondary backgrounds
+        muted: {
+          DEFAULT: '#F3F4F6',
+          foreground: '#6B7280',
         },
 
-        // Text (foreground): Mindful Brown
-        foreground: {
-          DEFAULT: '#372315', // brown-90
-          muted: '#736B66',   // gray-60
-        },
+        // Border
+        border: '#E5E7EB',
 
         // Semantic states
-        success: '#7D944D',   // green-60
-        warning: '#AA5500',   // orange-60
-        error: '#894700',     // orange-70 (warm, non-aggressive)
+        success: '#10B981',
+        warning: '#F59E0B',
+        error: '#EF4444',
 
-        // Border and ring
-        border: '#E1E1E0',    // gray-20
-        ring: '#7D944D',      // green-60
+        // Gray scale for text hierarchy
+        gray: {
+          50: '#F9FAFB',
+          100: '#F3F4F6',
+          200: '#E5E7EB',
+          300: '#D1D5DB',
+          400: '#9CA3AF',
+          500: '#6B7280',
+          600: '#4B5563',
+          700: '#374151',
+          800: '#1F2937',
+          900: '#111827',
+        },
       },
 
-      // Border radius following design system
+      // DLS Border Radius: consistent, moderate
       borderRadius: {
-        'card': '20px',
+        'sm': '4px',
+        'md': '6px',
+        'lg': '8px',
+        'xl': '12px',
+        'card': '8px',
         'pill': '9999px',
-        'sheet': '24px',
-        'chip': '12px',
-        'input': '16px',
+        'sheet': '12px',
+        'chip': '6px',
+        'input': '6px',
       },
 
-      // Shadows: very soft, 0-4px blur, low opacity
+      // DLS: NO SHADOWS - flat design
       boxShadow: {
-        'card': '0 2px 4px rgba(55, 35, 21, 0.04)',
-        'sheet': '0 -2px 8px rgba(55, 35, 21, 0.06)',
-        'tile': '0 1px 3px rgba(55, 35, 21, 0.05)',
+        'none': 'none',
+        'card': 'none',
+        'sheet': 'none',
+        'tile': 'none',
       },
 
-      // Typography: Nunito Sans font
+      // DLS Typography: Outfit font
       fontFamily: {
-        sans: ['Nunito Sans', 'system-ui', 'sans-serif'],
+        sans: ['Outfit', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        // New design system scale - optimized for mobile readability
-        'h1': ['2rem', { lineHeight: '2.5rem', fontWeight: '600' }],         // 32px
-        'h2': ['1.5rem', { lineHeight: '2rem', fontWeight: '600' }],         // 24px
-        'h3': ['1.25rem', { lineHeight: '1.75rem', fontWeight: '600' }],     // 20px
-        'body-lg': ['1.125rem', { lineHeight: '1.75rem', fontWeight: '400' }], // 18px
-        'body': ['1rem', { lineHeight: '1.5rem', fontWeight: '400' }],       // 16px
-        'caption': ['0.875rem', { lineHeight: '1.25rem', fontWeight: '400' }], // 14px
-        'numeric-lg': ['1.75rem', { lineHeight: '2.25rem', fontWeight: '600' }], // 28px
-        'numeric': ['1.25rem', { lineHeight: '1.75rem', fontWeight: '600' }], // 20px
+        // Headings: Bold, tight letter-spacing
+        'h1': ['2rem', { lineHeight: '2.5rem', fontWeight: '700', letterSpacing: '-0.02em' }],
+        'h2': ['1.5rem', { lineHeight: '2rem', fontWeight: '700', letterSpacing: '-0.02em' }],
+        'h3': ['1.25rem', { lineHeight: '1.75rem', fontWeight: '600', letterSpacing: '-0.02em' }],
 
-        // Legacy aliases for backward compatibility
-        'headline': ['2rem', { lineHeight: '2.5rem', fontWeight: '600' }],   // 32px
-        'title': ['1.25rem', { lineHeight: '1.75rem', fontWeight: '600' }],  // 20px
+        // Body
+        'body-lg': ['1.125rem', { lineHeight: '1.75rem', fontWeight: '400' }],
+        'body': ['1rem', { lineHeight: '1.5rem', fontWeight: '400' }],
+        'caption': ['0.875rem', { lineHeight: '1.25rem', fontWeight: '400' }],
+
+        // Numeric displays
+        'numeric-lg': ['1.75rem', { lineHeight: '2.25rem', fontWeight: '700' }],
+        'numeric': ['1.25rem', { lineHeight: '1.75rem', fontWeight: '600' }],
+
+        // Legacy aliases
+        'headline': ['2rem', { lineHeight: '2.5rem', fontWeight: '700' }],
+        'title': ['1.25rem', { lineHeight: '1.75rem', fontWeight: '600' }],
       },
 
-      // Animation for progress ring and transitions
+      // DLS Motion: Snappy, 200ms
       animation: {
         'ring-fill': 'ringFill 700ms ease-out forwards',
-        'slide-up': 'slideUp 300ms ease-out',
+        'slide-up': 'slideUp 200ms ease-out',
         'fade-in': 'fadeIn 200ms ease-out',
       },
       keyframes: {

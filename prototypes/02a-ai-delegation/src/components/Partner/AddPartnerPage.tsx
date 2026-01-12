@@ -35,26 +35,26 @@ export function AddPartnerPage({ onCancel, onSubmit, isLoading = false }: AddPar
   const isValid = name.trim().length > 0
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="sticky top-0 z-10 bg-background/95 backdrop-blur-sm border-b border-border">
+    <div className="min-h-screen bg-gray-50">
+      {/* DLS: Header - flat, no shadow */}
+      <header className="sticky top-0 z-10 bg-white border-b border-gray-200">
         <div className="px-5 py-4 flex items-center justify-between gap-3">
           <button
             type="button"
             onClick={onCancel}
             disabled={isLoading}
             className={cn(
-              'text-body font-medium text-foreground',
-              'px-3 py-2 -my-2 -ml-3 rounded-pill',
-              'hover:bg-border/50 transition-colors',
-              'focus:outline-none focus:ring-2 focus:ring-ring',
+              'text-sm font-medium text-gray-900',
+              'px-3 py-2 -my-2 -ml-3 rounded-lg',
+              'hover:bg-gray-100 hover:scale-105 transition-all duration-200',
+              'focus:outline-none focus:ring-2 focus:ring-primary',
               isLoading && 'opacity-50 cursor-not-allowed'
             )}
           >
             Cancel
           </button>
 
-          <h1 className="text-title text-foreground">Add Partner</h1>
+          <h1 className="text-lg font-bold text-gray-900">Add Partner</h1>
 
           <div className="w-[72px]" />
         </div>
@@ -62,19 +62,19 @@ export function AddPartnerPage({ onCancel, onSubmit, isLoading = false }: AddPar
 
       {/* Form */}
       <main className="px-5 py-6 space-y-6">
-        {/* Info card */}
-        <div className="bg-background-card border border-border rounded-card p-4">
-          <p className="text-body text-foreground">
+        {/* DLS: Info card - flat, no shadow */}
+        <div className="bg-white rounded-lg p-4">
+          <p className="text-sm text-gray-900">
             Add your partner to log meals for both of you at once.
           </p>
-          <p className="text-caption text-foreground-muted mt-2">
+          <p className="text-xs text-gray-500 mt-2">
             You can switch profiles anytime from the header.
           </p>
         </div>
 
-        {/* Name input */}
+        {/* DLS: Name input - gray bg, no border */}
         <div className="space-y-2">
-          <label htmlFor="partner-name" className="block text-body font-medium text-foreground">
+          <label htmlFor="partner-name" className="block text-xs font-semibold text-gray-900 uppercase tracking-wide">
             Partner's name
           </label>
           <input
@@ -85,26 +85,25 @@ export function AddPartnerPage({ onCancel, onSubmit, isLoading = false }: AddPar
             placeholder="Enter name"
             disabled={isLoading}
             className={cn(
-              'w-full px-4 py-3 rounded-card',
-              'bg-background-card border border-border',
-              'text-body text-foreground placeholder:text-foreground-muted',
-              'focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent',
-              'transition-colors',
-              error && 'border-red-500 focus:ring-red-500'
+              'w-full h-14 px-5 rounded-lg',
+              'bg-gray-100 text-gray-900 placeholder:text-gray-500',
+              'focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary',
+              'transition-all duration-200',
+              error && 'ring-2 ring-error bg-error/5'
             )}
           />
           {error && (
-            <p className="text-caption text-red-500">{error}</p>
+            <p className="text-xs text-error">{error}</p>
           )}
         </div>
 
-        {/* Calorie goal slider */}
+        {/* DLS: Calorie goal slider - flat */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <label htmlFor="calorie-goal" className="text-body font-medium text-foreground">
+            <label htmlFor="calorie-goal" className="text-xs font-semibold text-gray-900 uppercase tracking-wide">
               Daily calorie goal
             </label>
-            <span className="text-body font-medium text-primary">
+            <span className="text-sm font-bold text-primary">
               {dailyKcal} kcal
             </span>
           </div>
@@ -120,26 +119,26 @@ export function AddPartnerPage({ onCancel, onSubmit, isLoading = false }: AddPar
             disabled={isLoading}
             className={cn(
               'w-full h-2 rounded-full appearance-none cursor-pointer',
-              'bg-border',
+              'bg-gray-200',
               '[&::-webkit-slider-thumb]:appearance-none',
-              '[&::-webkit-slider-thumb]:w-5 [&::-webkit-slider-thumb]:h-5',
+              '[&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6',
               '[&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-primary',
-              '[&::-webkit-slider-thumb]:shadow-md [&::-webkit-slider-thumb]:cursor-pointer',
-              '[&::-moz-range-thumb]:w-5 [&::-moz-range-thumb]:h-5',
+              '[&::-webkit-slider-thumb]:cursor-pointer',
+              '[&::-moz-range-thumb]:w-6 [&::-moz-range-thumb]:h-6',
               '[&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:bg-primary',
               '[&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:cursor-pointer'
             )}
           />
 
-          <div className="flex justify-between text-caption text-foreground-muted">
+          <div className="flex justify-between text-xs text-gray-500">
             <span>{MIN_CALORIES}</span>
             <span>{MAX_CALORIES}</span>
           </div>
         </div>
 
-        {/* Quick presets */}
+        {/* DLS: Quick presets - scale on hover */}
         <div className="space-y-2">
-          <p className="text-caption text-foreground-muted">Quick presets</p>
+          <p className="text-xs text-gray-500">Quick presets</p>
           <div className="flex gap-2">
             {[1500, 1800, 2000, 2500].map((preset) => (
               <button
@@ -148,11 +147,11 @@ export function AddPartnerPage({ onCancel, onSubmit, isLoading = false }: AddPar
                 onClick={() => setDailyKcal(preset)}
                 disabled={isLoading}
                 className={cn(
-                  'flex-1 py-2 rounded-pill text-caption font-medium',
-                  'border transition-colors',
+                  'flex-1 py-2 rounded-lg text-xs font-medium',
+                  'transition-all duration-200 hover:scale-105',
                   dailyKcal === preset
-                    ? 'bg-primary text-primary-foreground border-primary'
-                    : 'bg-background-card text-foreground border-border hover:border-primary'
+                    ? 'bg-primary text-white'
+                    : 'bg-white text-gray-900 hover:bg-gray-100'
                 )}
               >
                 {preset}
@@ -161,18 +160,19 @@ export function AddPartnerPage({ onCancel, onSubmit, isLoading = false }: AddPar
           </div>
         </div>
 
-        {/* Submit button */}
+        {/* DLS: Submit button - solid bg, scale on hover */}
         <button
           type="button"
           onClick={handleSubmit}
           disabled={!isValid || isLoading}
           className={cn(
-            'w-full py-4 rounded-pill mt-4',
-            'bg-primary text-primary-foreground',
-            'text-body font-medium',
-            'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-            'transition-opacity',
-            (!isValid || isLoading) && 'opacity-50 cursor-not-allowed'
+            'w-full h-14 rounded-lg mt-4',
+            'bg-primary text-white',
+            'text-sm font-semibold',
+            'hover:bg-primary-dark hover:scale-105',
+            'focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2',
+            'transition-all duration-200',
+            (!isValid || isLoading) && 'opacity-50 cursor-not-allowed hover:scale-100'
           )}
         >
           {isLoading ? 'Adding...' : 'Add Partner'}

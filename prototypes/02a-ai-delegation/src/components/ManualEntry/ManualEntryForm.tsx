@@ -83,22 +83,22 @@ export function ManualEntryForm({
 
   return (
     <>
-      {/* Form header with cancel and save buttons */}
+      {/* DLS: Form header with cancel and save buttons */}
       <div className="flex items-center justify-between gap-3 mb-6">
         <button
           type="button"
           onClick={onCancel}
           className={cn(
-            'text-body font-medium text-foreground',
-            'px-3 py-2 -my-2 -ml-3 rounded-pill',
-            'hover:bg-border/50 transition-colors',
-            'focus:outline-none focus:ring-2 focus:ring-ring'
+            'text-sm font-medium text-gray-900',
+            'px-3 py-2 -my-2 -ml-3 rounded-lg',
+            'hover:bg-gray-100 hover:scale-105 transition-all duration-200',
+            'focus:outline-none focus:ring-2 focus:ring-primary'
           )}
         >
           {cancelLabel}
         </button>
 
-        <h2 className="text-title text-foreground">
+        <h2 className="text-lg font-bold text-gray-900">
           Manual Entry
         </h2>
 
@@ -107,22 +107,23 @@ export function ManualEntryForm({
           onClick={handleSubmit}
           disabled={!canSave}
           className={cn(
-            'text-body font-medium',
-            'px-3 py-2 -my-2 -mr-3 rounded-pill',
+            'text-sm font-semibold',
+            'px-4 py-2 -my-2 -mr-3 rounded-lg',
+            'transition-all duration-200',
             canSave
-              ? 'bg-primary text-primary-foreground'
-              : 'bg-border text-foreground-muted cursor-not-allowed',
-            'focus:outline-none focus:ring-2 focus:ring-ring'
+              ? 'bg-primary text-white hover:bg-primary-dark hover:scale-105'
+              : 'bg-gray-200 text-gray-500 cursor-not-allowed',
+            'focus:outline-none focus:ring-2 focus:ring-primary'
           )}
         >
           {saveLabel}
         </button>
       </div>
 
-      {/* Form fields */}
+      {/* DLS: Form fields - gray bg inputs */}
       <div className="space-y-5">
         <div className="space-y-2">
-          <label className="text-caption text-foreground-muted" htmlFor="manual-name">
+          <label className="text-xs font-semibold text-gray-900 uppercase tracking-wide" htmlFor="manual-name">
             Name
           </label>
           <input
@@ -131,18 +132,19 @@ export function ManualEntryForm({
             onChange={(e) => setName(e.target.value)}
             placeholder="Phở bò"
             className={cn(
-              'w-full rounded-card bg-background-card border border-border',
-              'px-4 py-3 text-body text-foreground',
-              'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
+              'w-full h-14 rounded-lg bg-gray-100',
+              'px-5 text-sm text-gray-900 placeholder:text-gray-500',
+              'focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary',
+              'transition-all duration-200'
             )}
           />
           {nameError && (
-            <p className="text-caption text-error">{nameError}</p>
+            <p className="text-xs text-error">{nameError}</p>
           )}
         </div>
 
         <div className="space-y-2">
-          <label className="text-caption text-foreground-muted" htmlFor="manual-kcal">
+          <label className="text-xs font-semibold text-gray-900 uppercase tracking-wide" htmlFor="manual-kcal">
             Calories (kcal)
           </label>
           <input
@@ -152,19 +154,20 @@ export function ManualEntryForm({
             onChange={(e) => setKcal(e.target.value)}
             placeholder="520"
             className={cn(
-              'w-full rounded-card bg-background-card border border-border',
-              'px-4 py-3 text-body text-foreground',
-              'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
+              'w-full h-14 rounded-lg bg-gray-100',
+              'px-5 text-sm text-gray-900 placeholder:text-gray-500',
+              'focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary',
+              'transition-all duration-200'
             )}
           />
           {kcalError && (
-            <p className="text-caption text-error">{kcalError}</p>
+            <p className="text-xs text-error">{kcalError}</p>
           )}
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
-            <label className="text-caption text-foreground-muted" htmlFor="manual-protein">
+            <label className="text-xs font-semibold text-gray-900 uppercase tracking-wide" htmlFor="manual-protein">
               Protein (g). Optional
             </label>
             <input
@@ -174,15 +177,16 @@ export function ManualEntryForm({
               onChange={(e) => setProtein(e.target.value)}
               placeholder="0"
               className={cn(
-                'w-full rounded-card bg-background-card border border-border',
-                'px-4 py-3 text-body text-foreground',
-                'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
+                'w-full h-14 rounded-lg bg-gray-100',
+                'px-5 text-sm text-gray-900 placeholder:text-gray-500',
+                'focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary',
+                'transition-all duration-200'
               )}
             />
           </div>
 
           <div className="space-y-2">
-            <label className="text-caption text-foreground-muted" htmlFor="manual-carbs">
+            <label className="text-xs font-semibold text-gray-900 uppercase tracking-wide" htmlFor="manual-carbs">
               Carbs (g). Optional
             </label>
             <input
@@ -192,15 +196,16 @@ export function ManualEntryForm({
               onChange={(e) => setCarbs(e.target.value)}
               placeholder="0"
               className={cn(
-                'w-full rounded-card bg-background-card border border-border',
-                'px-4 py-3 text-body text-foreground',
-                'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
+                'w-full h-14 rounded-lg bg-gray-100',
+                'px-5 text-sm text-gray-900 placeholder:text-gray-500',
+                'focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary',
+                'transition-all duration-200'
               )}
             />
           </div>
 
           <div className="space-y-2">
-            <label className="text-caption text-foreground-muted" htmlFor="manual-fat">
+            <label className="text-xs font-semibold text-gray-900 uppercase tracking-wide" htmlFor="manual-fat">
               Fat (g). Optional
             </label>
             <input
@@ -210,9 +215,10 @@ export function ManualEntryForm({
               onChange={(e) => setFat(e.target.value)}
               placeholder="0"
               className={cn(
-                'w-full rounded-card bg-background-card border border-border',
-                'px-4 py-3 text-body text-foreground',
-                'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
+                'w-full h-14 rounded-lg bg-gray-100',
+                'px-5 text-sm text-gray-900 placeholder:text-gray-500',
+                'focus:outline-none focus:bg-white focus:ring-2 focus:ring-primary',
+                'transition-all duration-200'
               )}
             />
           </div>
