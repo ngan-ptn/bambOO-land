@@ -72,19 +72,19 @@ export function PortionPicker({
           aria-label={isFavorite ? 'Remove from favorites' : 'Add to favorites'}
           className={cn(
             'inline-flex items-center justify-center',
-            'w-8 h-8 rounded-full',
-            'transition-all duration-150',
+            'w-8 h-8 rounded-md',
+            'transition-all duration-200',
             'hover:bg-gray-100 active:scale-95',
-            'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
+            'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2'
           )}
         >
           <Heart
             size={20}
             className={cn(
-              'transition-colors duration-150',
+              'transition-all duration-200',
               isFavorite
                 ? 'fill-red-500 text-red-500'
-                : 'fill-none text-foreground-muted'
+                : 'fill-none text-gray-500'
             )}
           />
         </button>
@@ -105,21 +105,18 @@ export function PortionPicker({
       <div className="flex gap-3 justify-center p-1">
         {PORTION_OPTIONS.map(({ size, label }) => {
           const nutrition = food.portions[size]
-          
+
           return (
             <button
               key={size}
               type="button"
               onClick={() => handlePortionSelect(size)}
               className={cn(
-                // Pill base: rounded, generous padding for touch
                 'flex-1 max-w-[140px] py-4 px-4',
-                'rounded-pill bg-primary text-primary-foreground',
-                'transition-all duration-150',
-                'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-                // Hover/active states
-                'hover:bg-primary-dark active:scale-95',
-                // Touch target compliance
+                'rounded-md bg-blue-500 text-white',
+                'transition-all duration-200',
+                'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
+                'hover:bg-blue-600 hover:scale-105 active:scale-95',
                 'min-h-[72px] tap-highlight-none'
               )}
             >
@@ -137,7 +134,7 @@ export function PortionPicker({
       </div>
 
       {/* Serving size hint */}
-      <p className="text-caption text-foreground-muted text-center mt-4">
+      <p className="text-caption text-gray-500 text-center mt-4">
         {food.serving}
       </p>
     </BottomSheet>

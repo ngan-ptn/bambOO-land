@@ -28,26 +28,26 @@ export function LogoutModal({ isOpen, onClose }: LogoutModalProps) {
       onClick={onClose}
     >
       <div
-        className="w-full max-w-[400px] bg-white rounded-3xl p-7 animate-slide-up"
+        className="w-full max-w-[400px] bg-white rounded-lg p-7 animate-slide-up"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-error/10 flex items-center justify-center text-3xl">
+        <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-red-50 flex items-center justify-center text-3xl">
           👋
         </div>
-        <h3 className="text-xl font-bold text-foreground text-center mb-2">Đăng xuất?</h3>
-        <p className="text-foreground-muted text-center mb-6">
+        <h3 className="text-xl font-bold text-gray-900 text-center mb-2">Đăng xuất?</h3>
+        <p className="text-gray-500 text-center mb-6">
           Bạn có chắc muốn đăng xuất khỏi tài khoản?
         </p>
         <div className="flex gap-3">
           <button
             onClick={onClose}
-            className="flex-1 h-12 bg-background rounded-xl font-semibold text-foreground hover:bg-border transition-colors"
+            className="flex-1 h-12 bg-gray-100 rounded-md font-semibold text-gray-900 hover:bg-gray-200 transition-all duration-200"
           >
             Hủy
           </button>
           <button
             onClick={handleLogout}
-            className="flex-1 h-12 bg-error rounded-xl font-semibold text-white hover:bg-error/90 transition-colors"
+            className="flex-1 h-12 bg-red-600 rounded-md font-semibold text-white hover:bg-red-700 transition-all duration-200"
           >
             Đăng xuất
           </button>

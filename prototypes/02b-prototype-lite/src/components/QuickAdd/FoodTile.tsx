@@ -50,15 +50,15 @@ export function FoodTile({ food, onSelect, disabled = false }: FoodTileProps) {
       onMouseLeave={handleTouchEnd}
       disabled={disabled}
       className={cn(
-        // Base card styling: white background, rounded corners, soft shadow.
-        'w-full bg-background-card rounded-card shadow-tile',
-        'p-4 text-left transition-all duration-150',
+        // Base card styling: white background, rounded corners, no shadow.
+        'w-full bg-white rounded-lg shadow-none',
+        'p-4 text-left transition-all duration-200',
         // Touch target minimum 44px (enforced via padding + content).
         'min-h-[72px] tap-highlight-none',
         // Focus state for accessibility.
-        'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-        // Pressed state: slight scale down and shadow reduction.
-        isPressed && !disabled && 'scale-[0.97] shadow-none',
+        'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2',
+        // Pressed state: slight scale down.
+        isPressed && !disabled && 'scale-[0.97]',
         // Disabled state: reduced opacity, no pointer events.
         disabled && 'opacity-50 cursor-not-allowed'
       )}
@@ -69,12 +69,12 @@ export function FoodTile({ food, onSelect, disabled = false }: FoodTileProps) {
           <EmojiContainer emoji={categoryEmoji} ariaLabel={food.category} size="sm" />
           <div className="min-w-0">
             {/* Vietnamese food name - primary text. */}
-            <p className="text-body text-foreground font-medium leading-tight line-clamp-2">
+            <p className="text-body text-gray-900 font-medium leading-tight line-clamp-2">
               {food.name_vi}
             </p>
 
             {/* Calorie display - muted caption showing M portion. */}
-            <p className="text-caption text-foreground-muted mt-1">
+            <p className="text-caption text-gray-500 mt-1">
               {displayKcal} kcal
             </p>
           </div>
@@ -83,7 +83,7 @@ export function FoodTile({ food, onSelect, disabled = false }: FoodTileProps) {
         {/* Right: add icon for clarity. */}
         <PlusCircle
           size={20}
-          className="text-primary shrink-0 mt-0.5"
+          className="text-blue-500 shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-200"
         />
       </div>
     </button>

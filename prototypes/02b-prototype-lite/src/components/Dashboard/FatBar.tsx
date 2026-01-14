@@ -32,8 +32,8 @@ export function FatBar({ consumed, goal, className }: FatBarProps) {
     <div className={cn('w-full', className)}>
       {/* Label row: "Fat" on left, consumed/goal on right */}
       <div className="flex items-center justify-between mb-2">
-        <span className="text-body text-foreground font-medium">Fat</span>
-        <span className="text-caption text-foreground-muted">
+        <span className="text-body text-gray-900 font-medium">Fat</span>
+        <span className="text-caption text-gray-500">
           {Math.round(consumed)}g / {goal}g
           {isExceeded && (
             <span className="ml-1">(+{Math.round(consumed - goal)}g)</span>
@@ -42,12 +42,13 @@ export function FatBar({ consumed, goal, className }: FatBarProps) {
       </div>
 
       {/* Progress bar container */}
-      <div className="h-3 bg-border rounded-pill overflow-hidden">
-        {/* Filled portion with purple gradient (Kind Purple) */}
+      <div className="h-3 bg-gray-200 rounded-pill overflow-hidden">
+        {/* Filled portion with flat amber color and animation */}
         <div
           className={cn(
             'h-full rounded-pill transition-[width] duration-700 ease-out',
-            'bg-gradient-to-r from-purple-60 to-purple-50'
+            // Flat amber-500 color per DLS
+            'bg-amber-500'
           )}
           style={{ width: `${animatedWidth}%` }}
         />

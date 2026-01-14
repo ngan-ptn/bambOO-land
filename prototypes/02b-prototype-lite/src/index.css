@@ -1,28 +1,28 @@
-/* Import Nunito Sans font for warm, wellness-inspired typography */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700&display=swap');
+/* Import Urbanist font for Warm Wellness design system */
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&display=swap');
 
 /* Tailwind CSS directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Base layer: global reset and defaults for wellness-inspired design */
+/* Base layer: global reset and defaults for Warm Wellness design */
 @layer base {
   :root {
-    /* CSS variables matching new design system */
-    --background: 0 0% 96%;           /* gray-10 */
-    --foreground: 24 42% 15%;         /* brown-90 */
-    --card: 0 0% 100%;
-    --card-foreground: 24 42% 15%;    /* brown-90 */
-    --primary: 75 32% 44%;            /* green-60 */
-    --primary-foreground: 0 0% 100%;
-    --secondary: 30 100% 33%;         /* orange-60 */
-    --secondary-foreground: 0 0% 100%;
-    --muted: 20 5% 43%;               /* gray-60 */
-    --muted-foreground: 20 5% 43%;
-    --border: 0 1% 88%;               /* gray-20 */
-    --ring: 75 32% 44%;               /* green-60 */
-    --radius: 20px;
+    /* CSS variables matching Warm Wellness design system */
+    --background: 0 0% 96%;               /* #F5F5F5 Gray 10 */
+    --foreground: 22 45% 15%;             /* #372315 Brown 90 */
+    --card: 0 0% 100%;                    /* #FFFFFF */
+    --card-foreground: 22 45% 15%;        /* #372315 Brown 90 */
+    --primary: 76 32% 38%;                /* #6B7F42 Serenity Green */
+    --primary-foreground: 0 0% 100%;      /* #FFFFFF */
+    --secondary: 30 100% 33%;             /* #AA5500 Empathy Orange */
+    --secondary-foreground: 0 0% 100%;    /* #FFFFFF */
+    --muted: 30 6% 95%;                   /* #F5F5F5 Gray 10 */
+    --muted-foreground: 20 6% 43%;        /* #736B66 Gray 60 */
+    --border: 30 2% 88%;                  /* #E1E1E0 Gray 20 */
+    --ring: 76 32% 44%;                   /* #7D944D Green 60 */
+    --radius: 20px;                       /* rounded-card */
   }
 
   * {
@@ -38,9 +38,6 @@
     @apply bg-background text-foreground font-sans antialiased;
     /* Mobile-first: ensure minimum width support */
     min-width: 320px;
-    /* App content width is now constrained by an inner shell container
-       instead of the body itself so that global scroll locking (e.g. modals)
-       cannot change the perceived size of the main UI. */
     margin: 0;
     padding: 0;
   }

@@ -33,8 +33,8 @@ export function ProteinBar({ consumed, goal, className }: ProteinBarProps) {
     <div className={cn('w-full', className)}>
       {/* Label row: "Protein" on left, consumed/goal on right */}
       <div className="flex items-center justify-between mb-2">
-        <span className="text-body text-foreground font-medium">Protein</span>
-        <span className="text-caption text-foreground-muted">
+        <span className="text-body text-gray-900 font-medium">Protein</span>
+        <span className="text-caption text-gray-500">
           {consumed}g / {goal}g
           {isExceeded && (
             // Show excess in neutral color (not red per design spec)
@@ -44,13 +44,13 @@ export function ProteinBar({ consumed, goal, className }: ProteinBarProps) {
       </div>
 
       {/* Progress bar container */}
-      <div className="h-3 bg-border rounded-pill overflow-hidden">
-        {/* Filled portion with gradient and animation */}
+      <div className="h-3 bg-gray-200 rounded-pill overflow-hidden">
+        {/* Filled portion with flat primary color and animation */}
         <div
           className={cn(
             'h-full rounded-pill transition-[width] duration-700 ease-out',
-            // Soft gradient from primary to primary-light
-            'bg-gradient-to-r from-primary to-primary-light'
+            // Flat blue-500 color per DLS
+            'bg-blue-500'
           )}
           style={{ width: `${animatedWidth}%` }}
         />

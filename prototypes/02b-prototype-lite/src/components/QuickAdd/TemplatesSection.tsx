@@ -110,7 +110,7 @@ export function TemplatesSection({
           // Empty-state action: lets a new user start defining their very first meal template
           // so it aligns with the acceptance criteria copy and guides them towards the template flow.
           onClick={onAddTemplate}
-          className="w-full py-8 rounded-card border border-dashed border-border bg-background hover:bg-surface-alt transition-colors"
+          className="w-full py-8 rounded-lg border border-dashed border-border bg-background hover:bg-surface-alt transition-colors"
         >
           <span className="text-body text-foreground-muted">
             + Create your first meal template
@@ -179,7 +179,7 @@ export function TemplatesSection({
           {/* Add new template button */}
           <button
             onClick={onAddTemplate}
-            className="w-full py-4 rounded-card border border-dashed border-border bg-background hover:bg-surface-alt transition-colors"
+            className="w-full py-4 rounded-lg border border-dashed border-border bg-background hover:bg-surface-alt transition-colors"
           >
             <span className="text-body text-foreground-muted">
               + Create new template

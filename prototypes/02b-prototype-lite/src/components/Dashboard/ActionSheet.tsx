@@ -41,7 +41,7 @@ export function ActionSheet({ isOpen, onClose, onSelect }: ActionSheetProps) {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/40 animate-fade-in"
+      className="fixed inset-0 z-50 bg-black/50 animate-fade-in"
       onClick={handleClose}
       role="dialog"
       aria-modal="true"
@@ -50,24 +50,25 @@ export function ActionSheet({ isOpen, onClose, onSelect }: ActionSheetProps) {
       <div
         className={cn(
           'absolute bottom-0 left-0 right-0',
-          'bg-background-card rounded-t-sheet shadow-sheet',
+          'bg-white rounded-t-lg shadow-none',
           'px-5 pt-4 pb-10 safe-bottom',
           'animate-slide-up'
         )}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="w-10 h-1 bg-border rounded-full mx-auto mb-4" />
+        <div className="w-10 h-1 bg-gray-200 rounded-full mx-auto mb-4" />
 
-        <h2 className="text-title text-foreground mb-4">Add food</h2>
+        <h2 className="text-title text-gray-900 mb-4">Add food</h2>
 
         <div className="space-y-2">
           <button
             type="button"
             onClick={() => onSelect('manual')}
             className={cn(
-              'w-full text-left px-4 py-4 rounded-card',
-              'bg-background border border-border',
-              'text-body text-foreground font-medium'
+              'w-full text-left px-4 py-4 rounded-lg',
+              'bg-white border border-gray-200',
+              'text-body text-gray-900 font-medium',
+              'hover:bg-gray-50 transition-all duration-200'
             )}
           >
             Manual entry
@@ -77,9 +78,10 @@ export function ActionSheet({ isOpen, onClose, onSelect }: ActionSheetProps) {
             type="button"
             onClick={() => onSelect('search')}
             className={cn(
-              'w-full text-left px-4 py-4 rounded-card',
-              'bg-background border border-border',
-              'text-body text-foreground font-medium'
+              'w-full text-left px-4 py-4 rounded-lg',
+              'bg-white border border-gray-200',
+              'text-body text-gray-900 font-medium',
+              'hover:bg-gray-50 transition-all duration-200'
             )}
           >
             Search
@@ -89,9 +91,10 @@ export function ActionSheet({ isOpen, onClose, onSelect }: ActionSheetProps) {
             type="button"
             onClick={() => onSelect('scan')}
             className={cn(
-              'w-full text-left px-4 py-4 rounded-card',
-              'bg-background border border-border',
-              'text-body text-foreground font-medium'
+              'w-full text-left px-4 py-4 rounded-lg',
+              'bg-white border border-gray-200',
+              'text-body text-gray-900 font-medium',
+              'hover:bg-gray-50 transition-all duration-200'
             )}
           >
             Scan
@@ -101,7 +104,7 @@ export function ActionSheet({ isOpen, onClose, onSelect }: ActionSheetProps) {
         <button
           type="button"
           onClick={handleClose}
-          className="w-full mt-4 px-4 py-4 rounded-card bg-foreground text-white text-body font-medium"
+          className="w-full mt-4 px-4 py-4 rounded-lg bg-gray-900 text-white text-body font-medium hover:bg-gray-800 transition-all duration-200"
         >
           Cancel
         </button>

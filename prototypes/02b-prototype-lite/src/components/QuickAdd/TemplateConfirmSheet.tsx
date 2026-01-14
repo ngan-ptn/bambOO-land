@@ -159,7 +159,7 @@ export function TemplateConfirmSheet({
               <div
                 key={item.id}
                 className={cn(
-                  'flex items-start gap-3 p-3 rounded-card bg-background border border-border',
+                  'flex items-start gap-3 p-3 rounded-lg bg-background border border-border',
                   !isSelected && 'opacity-50'
                 )}
               >

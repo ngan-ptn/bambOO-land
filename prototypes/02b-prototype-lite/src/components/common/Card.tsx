@@ -58,22 +58,20 @@ export function Card({
   return (
     <div
       className={cn(
-        // Base card styling: background, border radius, shadow
-        'bg-background-card rounded-card shadow-card',
+        // Base card styling: background, border radius, soft shadow
+        'bg-white rounded-card shadow-card',
         // Padding for content
-        'p-4',
+        'p-6',
         // Variant-specific styles
         variant === 'interactive' && isClickable && [
-          // Interactive states: hover elevation, active scale, cursor pointer
-          'hover:shadow-md transition-shadow duration-150',
-          'active:scale-[0.98] transition-transform duration-100',
+          // Interactive states: scale hover, active press, cursor pointer
+          'transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]',
           'cursor-pointer',
           'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
         ],
         variant === 'expandable' && isClickable && [
           // Expandable: same interactive styles plus transition for expansion
-          'hover:shadow-md transition-all duration-150',
-          'active:scale-[0.98] transition-transform duration-100',
+          'transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]',
           'cursor-pointer',
           'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
         ],

@@ -107,7 +107,7 @@ export function FoodTileGrid({
   // Favorites tab placeholder (not yet implemented)
   if (filterTab === 'fav') {
     return (
-      <div className="bg-background-card border border-border rounded-card p-4">
+      <div className="bg-white border border-border rounded-lg p-4">
         <p className="text-body text-foreground">Favorites not implemented.</p>
         <p className="text-caption text-foreground-muted mt-1">
           Implement CR02-03 to enable this tab.
@@ -122,7 +122,7 @@ export function FoodTileGrid({
   if (showFlatResults) {
     if (foodsToRender.length === 0) {
       return (
-        <div className="bg-background-card border border-border rounded-card p-4">
+        <div className="bg-white border border-border rounded-lg p-4">
           <p className="text-body text-foreground">No results.</p>
           {onManualEntry ? (
             <button
@@ -190,7 +190,7 @@ export function FoodTileGrid({
             Recent
           </h2>
           {filteredRecentFoods.length === 0 ? (
-            <div className="bg-background-card border border-border rounded-card p-4">
+            <div className="bg-white border border-border rounded-lg p-4">
               <p className="text-body text-foreground">No recent items yet.</p>
               <p className="text-caption text-foreground-muted mt-1">
                 Log a food once to see it here.

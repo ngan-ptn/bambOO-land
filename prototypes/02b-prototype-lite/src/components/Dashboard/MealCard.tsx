@@ -22,9 +22,9 @@ export function MealCard({ entry, onDelete }: MealCardProps) {
   return (
     <div
       className={cn(
-        'bg-background-card rounded-card shadow-card p-4',
+        'bg-white rounded-card shadow-card p-4',
         'flex items-center justify-between gap-3',
-        'transition-colors duration-150'
+        'transition-all duration-200 hover:scale-[1.02]'
       )}
     >
       {/* Meal info: name, portion badge, and calories */}
@@ -34,7 +34,7 @@ export function MealCard({ entry, onDelete }: MealCardProps) {
             {entry.name_vi}
           </p>
           {/* Portion size badge */}
-          <span className="text-caption bg-tertiary/20 text-tertiary-dark px-2 py-0.5 rounded-pill shrink-0">
+          <span className="text-caption bg-green-10 text-green-70 px-2 py-0.5 rounded-pill shrink-0">
             {entry.portion}
           </span>
         </div>
@@ -49,10 +49,10 @@ export function MealCard({ entry, onDelete }: MealCardProps) {
         onClick={handleDeleteClick}
         className={cn(
           'flex items-center justify-center',
-          'p-2 rounded-pill transition-all duration-150',
-          'focus:outline-none focus:ring-2 focus:ring-ring',
+          'p-2 rounded-chip transition-all duration-200',
+          'focus:outline-none focus:ring-2 focus:ring-primary',
           'tap-highlight-none',
-          'text-foreground-muted hover:text-error hover:bg-error/10'
+          'text-foreground-muted hover:text-secondary hover:bg-orange-10'
         )}
         aria-label="Delete meal"
       >

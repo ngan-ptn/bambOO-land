@@ -24,8 +24,8 @@ export function NameScreen() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-5 bg-gradient-to-b from-[#E8E4DE] to-[#D8D4CE]">
-      <div className="w-full max-w-[440px] bg-background rounded-3xl shadow-xl p-12">
+    <div className="min-h-screen flex items-center justify-center p-5 bg-gray-100">
+      <div className="w-full max-w-[440px] bg-background rounded-lg shadow-none p-12">
         <div className="flex justify-center gap-2 mb-8">
           <div className="w-2 h-2 rounded-full bg-primary"></div>
           <div className="w-6 h-2 rounded-full bg-primary"></div>
@@ -51,7 +51,7 @@ export function NameScreen() {
               setError('')
             }}
             placeholder="Ví dụ: Minh"
-            className="w-full h-14 px-5 rounded-2xl border-2 border-border bg-white text-foreground placeholder:text-foreground-muted focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/15 transition-all"
+            className="w-full h-14 px-5 rounded-lg border-2 border-border bg-white text-foreground placeholder:text-foreground-muted focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/15 transition-all"
           />
           {error && <p className="text-sm text-error">{error}</p>}
         </div>
@@ -59,7 +59,7 @@ export function NameScreen() {
         <button
           onClick={handleContinue}
           disabled={!name.trim()}
-          className="w-full h-14 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+          className="w-full h-14 bg-blue-500 text-white font-semibold rounded-lg shadow-none hover:shadow-none  transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
         >
           Tiếp tục
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

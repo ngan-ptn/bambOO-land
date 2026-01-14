@@ -78,8 +78,8 @@ export function Toast({ toast, onClose, onUndo, onEdit }: ToastProps) {
         // Fixed position at bottom of screen, above safe area
         'fixed bottom-6 left-4 right-4 z-40',
         'mx-auto max-w-md',
-        // Card styling: rounded, shadowed
-        'bg-foreground text-background rounded-card shadow-card',
+        // Card styling: rounded, warm brown for wellness feel
+        'bg-brown-90 text-white rounded-card shadow-card',
         'px-4 py-3',
         'flex items-center justify-between gap-3',
         // Entry animation
@@ -107,10 +107,10 @@ export function Toast({ toast, onClose, onUndo, onEdit }: ToastProps) {
               }
             }}
             className={cn(
-              'text-secondary font-medium text-body',
+              'text-green-40 font-medium text-body',
               'px-2 py-1 -my-1',
-              'rounded hover:bg-white/10 transition-colors',
-              'focus:outline-none focus:ring-2 focus:ring-secondary',
+              'rounded-chip hover:bg-white/10 transition-all duration-200',
+              'focus:outline-none focus:ring-2 focus:ring-primary',
               'tap-highlight-none'
             )}
           >
@@ -126,8 +126,8 @@ export function Toast({ toast, onClose, onUndo, onEdit }: ToastProps) {
           className={cn(
             'p-1 -m-1 rounded-full',
             'flex items-center justify-center',
-            'hover:bg-white/10 transition-colors',
-            'focus:outline-none focus:ring-2 focus:ring-secondary',
+            'hover:bg-white/10 transition-all duration-200',
+            'focus:outline-none focus:ring-2 focus:ring-primary',
             'tap-highlight-none'
           )}
         >

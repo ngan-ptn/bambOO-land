@@ -17,7 +17,7 @@ export function ScanCameraPage({ onCancel, onCapture }: ScanCameraPageProps) {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-10 bg-background/95 backdrop-blur-sm border-b border-border">
+      <header className="sticky top-0 z-10 bg-white  border-b border-border">
         <div className="px-5 py-4 flex items-center justify-between gap-3">
           <button
             type="button"
@@ -43,8 +43,8 @@ export function ScanCameraPage({ onCancel, onCapture }: ScanCameraPageProps) {
       <main className="px-5 py-6 space-y-6">
         <div
           className={cn(
-            'w-full aspect-[3/4] rounded-card',
-            'bg-background-card border border-border',
+            'w-full aspect-[3/4] rounded-lg',
+            'bg-white border border-border',
             'flex items-center justify-center'
           )}
         >

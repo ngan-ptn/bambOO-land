@@ -131,7 +131,7 @@ export function ManualEntryForm({
             onChange={(e) => setName(e.target.value)}
             placeholder="Phở bò"
             className={cn(
-              'w-full rounded-card bg-background-card border border-border',
+              'w-full rounded-lg bg-white border border-border',
               'px-4 py-3 text-body text-foreground',
               'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
             )}
@@ -152,7 +152,7 @@ export function ManualEntryForm({
             onChange={(e) => setKcal(e.target.value)}
             placeholder="520"
             className={cn(
-              'w-full rounded-card bg-background-card border border-border',
+              'w-full rounded-lg bg-white border border-border',
               'px-4 py-3 text-body text-foreground',
               'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
             )}
@@ -174,7 +174,7 @@ export function ManualEntryForm({
               onChange={(e) => setProtein(e.target.value)}
               placeholder="0"
               className={cn(
-                'w-full rounded-card bg-background-card border border-border',
+                'w-full rounded-lg bg-white border border-border',
                 'px-4 py-3 text-body text-foreground',
                 'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
               )}
@@ -192,7 +192,7 @@ export function ManualEntryForm({
               onChange={(e) => setCarbs(e.target.value)}
               placeholder="0"
               className={cn(
-                'w-full rounded-card bg-background-card border border-border',
+                'w-full rounded-lg bg-white border border-border',
                 'px-4 py-3 text-body text-foreground',
                 'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
               )}
@@ -210,7 +210,7 @@ export function ManualEntryForm({
               onChange={(e) => setFat(e.target.value)}
               placeholder="0"
               className={cn(
-                'w-full rounded-card bg-background-card border border-border',
+                'w-full rounded-lg bg-white border border-border',
                 'px-4 py-3 text-body text-foreground',
                 'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2'
               )}

@@ -353,7 +353,7 @@ function App() {
         </div>
         <button
           onClick={() => navigate('/profile')}
-          className="w-11 h-11 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white font-bold flex items-center justify-center shadow-md hover:shadow-lg transition-all"
+          className="w-11 h-11 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white font-bold flex items-center justify-center shadow-card hover:shadow-card transition-all"
         >
           {user?.avatar || '👤'}
         </button>

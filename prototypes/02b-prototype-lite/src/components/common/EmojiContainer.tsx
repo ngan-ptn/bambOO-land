@@ -38,7 +38,7 @@ export function EmojiContainer({
   return (
     <div
       className={cn(
-        'flex items-center justify-center rounded-2xl bg-brown-10 shrink-0',
+        'flex items-center justify-center rounded-md bg-gray-100 shrink-0',
         sizeClasses[size],
         className
       )}

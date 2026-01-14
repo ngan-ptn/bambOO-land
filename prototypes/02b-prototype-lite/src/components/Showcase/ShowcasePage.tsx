@@ -121,7 +121,7 @@ export function ShowcasePage() {
                     ].map(({ shade, color }) => (
                       <div key={shade} className="space-y-1">
                         <div
-                          className={cn('h-16 rounded-card shadow-tile')}
+                          className={cn('h-16 rounded-lg shadow-none')}
                           style={{ backgroundColor: color }}
                         />
                         <p className="text-caption text-foreground-muted text-center">
@@ -149,7 +149,7 @@ export function ShowcasePage() {
                     ].map(({ shade, color }) => (
                       <div key={shade} className="space-y-1">
                         <div
-                          className={cn('h-16 rounded-card shadow-tile')}
+                          className={cn('h-16 rounded-lg shadow-none')}
                           style={{ backgroundColor: color }}
                         />
                         <p className="text-caption text-foreground-muted text-center">
@@ -177,7 +177,7 @@ export function ShowcasePage() {
                     ].map(({ shade, color }) => (
                       <div key={shade} className="space-y-1">
                         <div
-                          className={cn('h-16 rounded-card shadow-tile')}
+                          className={cn('h-16 rounded-lg shadow-none')}
                           style={{ backgroundColor: color }}
                         />
                         <p className="text-caption text-foreground-muted text-center">
@@ -205,7 +205,7 @@ export function ShowcasePage() {
                     ].map(({ shade, color }) => (
                       <div key={shade} className="space-y-1">
                         <div
-                          className={cn('h-16 rounded-card shadow-tile')}
+                          className={cn('h-16 rounded-lg shadow-none')}
                           style={{ backgroundColor: color }}
                         />
                         <p className="text-caption text-foreground-muted text-center">
@@ -233,7 +233,7 @@ export function ShowcasePage() {
                     ].map(({ shade, color }) => (
                       <div key={shade} className="space-y-1">
                         <div
-                          className={cn('h-16 rounded-card shadow-tile')}
+                          className={cn('h-16 rounded-lg shadow-none')}
                           style={{ backgroundColor: color }}
                         />
                         <p className="text-caption text-foreground-muted text-center">
@@ -261,7 +261,7 @@ export function ShowcasePage() {
                     ].map(({ shade, color }) => (
                       <div key={shade} className="space-y-1">
                         <div
-                          className={cn('h-16 rounded-card shadow-tile')}
+                          className={cn('h-16 rounded-lg shadow-none')}
                           style={{ backgroundColor: color }}
                         />
                         <p className="text-caption text-foreground-muted text-center">
@@ -278,35 +278,35 @@ export function ShowcasePage() {
                 <h4 className="text-body font-medium text-foreground mb-3">Semantic Colors</h4>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="space-y-2">
-                    <div className="h-12 bg-primary rounded-card" />
+                    <div className="h-12 bg-primary rounded-lg" />
                     <p className="text-caption text-foreground-muted">Primary</p>
                   </div>
                   <div className="space-y-2">
-                    <div className="h-12 bg-secondary rounded-card" />
+                    <div className="h-12 bg-secondary rounded-lg" />
                     <p className="text-caption text-foreground-muted">Secondary</p>
                   </div>
                   <div className="space-y-2">
-                    <div className="h-12 bg-success rounded-card" />
+                    <div className="h-12 bg-success rounded-lg" />
                     <p className="text-caption text-foreground-muted">Success</p>
                   </div>
                   <div className="space-y-2">
-                    <div className="h-12 bg-warning rounded-card" />
+                    <div className="h-12 bg-warning rounded-lg" />
                     <p className="text-caption text-foreground-muted">Warning</p>
                   </div>
                   <div className="space-y-2">
-                    <div className="h-12 bg-error rounded-card" />
+                    <div className="h-12 bg-error rounded-lg" />
                     <p className="text-caption text-foreground-muted">Error</p>
                   </div>
                   <div className="space-y-2">
-                    <div className="h-12 bg-background-card border border-border rounded-card" />
+                    <div className="h-12 bg-white border border-border rounded-lg" />
                     <p className="text-caption text-foreground-muted">Card Background</p>
                   </div>
                   <div className="space-y-2">
-                    <div className="h-12 bg-foreground rounded-card" />
+                    <div className="h-12 bg-foreground rounded-lg" />
                     <p className="text-caption text-foreground-muted">Foreground</p>
                   </div>
                   <div className="space-y-2">
-                    <div className="h-12 bg-border rounded-card" />
+                    <div className="h-12 bg-border rounded-lg" />
                     <p className="text-caption text-foreground-muted">Border</p>
                   </div>
                 </div>
@@ -316,7 +316,7 @@ export function ShowcasePage() {
             {/* Typography */}
             <div>
               <h3 className="text-h3 text-foreground mb-4">Typography</h3>
-              <div className="space-y-4 bg-background-card rounded-card shadow-card p-6">
+              <div className="space-y-4 bg-white rounded-lg shadow-none p-6">
                 <div>
                   <p className="text-caption text-foreground-muted mb-1">H1 / Headline</p>
                   <p className="text-h1 text-foreground">The quick brown fox jumps</p>
@@ -357,7 +357,7 @@ export function ShowcasePage() {
               <h3 className="text-h3 text-foreground mb-4">Border Radius</h3>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="space-y-2">
-                  <div className="h-20 bg-primary rounded-card" />
+                  <div className="h-20 bg-primary rounded-lg" />
                   <p className="text-caption text-foreground-muted">Card (20px)</p>
                 </div>
                 <div className="space-y-2">
@@ -384,15 +384,15 @@ export function ShowcasePage() {
               <h3 className="text-h3 text-foreground mb-4">Shadows</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="space-y-2">
-                  <div className="h-24 bg-background-card rounded-card shadow-card" />
+                  <div className="h-24 bg-white rounded-lg shadow-none" />
                   <p className="text-caption text-foreground-muted">Card Shadow</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-24 bg-background-card rounded-card shadow-sheet" />
+                  <div className="h-24 bg-white rounded-lg shadow-sheet" />
                   <p className="text-caption text-foreground-muted">Sheet Shadow</p>
                 </div>
                 <div className="space-y-2">
-                  <div className="h-24 bg-background-card rounded-card shadow-tile" />
+                  <div className="h-24 bg-white rounded-lg shadow-none" />
                   <p className="text-caption text-foreground-muted">Tile Shadow</p>
                 </div>
               </div>

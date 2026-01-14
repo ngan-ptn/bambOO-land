@@ -51,8 +51,8 @@ export function BottomSheet({
         {/* Backdrop overlay - Radix handles click-to-close */}
         <Dialog.Overlay
           className={cn(
-            // Fixed overlay covering entire viewport
-            'fixed inset-0 z-50 bg-black/40',
+            // Fixed overlay covering entire viewport - flat, no blur
+            'fixed inset-0 z-50 bg-black/50',
             // Fade-in animation (Radix handles state transitions)
             'data-[state=open]:animate-fade-in'
           )}
@@ -68,9 +68,8 @@ export function BottomSheet({
             'bottom-0 left-0 right-0 mx-auto w-full max-w-lg',
             // Desktop: same bottom alignment to avoid extra gap under full-screen sheets.
             'md:bottom-0',
-            // Background and styling - rounded top corners, square bottom for edge-to-edge feel
-            'bg-background-card rounded-t-2xl rounded-b-none',
-            'shadow-xl',
+            // Background and styling - rounded top corners, square bottom for edge-to-edge feel, soft shadow
+            'bg-white rounded-t-sheet rounded-b-none shadow-sheet',
             // Padding: top and sides only, bottom padding kept minimal to avoid visible extra space
             'px-5 pt-6 pb-4',
             // Size variants

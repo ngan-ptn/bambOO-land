@@ -66,7 +66,7 @@ export function MealList({ logs, onDeleteLog, className }: MealListProps) {
           className={cn(
             'w-full py-3 flex items-center justify-center gap-2',
             'text-body text-primary font-medium',
-            'rounded-card hover:bg-primary/5 transition-colors',
+            'rounded-lg hover:bg-primary/5 transition-colors',
             'focus:outline-none focus:ring-2 focus:ring-ring',
             'tap-highlight-none'
           )}

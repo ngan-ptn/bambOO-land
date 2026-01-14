@@ -118,7 +118,7 @@ export function TemplateEditorSheet({
             placeholder="e.g., Usual breakfast"
             maxLength={50}
             className={cn(
-              'w-full px-4 py-3 rounded-card border',
+              'w-full px-4 py-3 rounded-lg border',
               'bg-background text-foreground',
               'focus:outline-none focus:ring-2 focus:ring-ring',
               !isNameValid && name.length > 0 && 'border-error'
@@ -158,7 +158,7 @@ export function TemplateEditorSheet({
             placeholder="Add notes about this template..."
             rows={3}
             className={cn(
-              'w-full px-4 py-3 rounded-card border border-border',
+              'w-full px-4 py-3 rounded-lg border border-border',
               'bg-background text-foreground',
               'focus:outline-none focus:ring-2 focus:ring-ring',
               'resize-none'
@@ -175,7 +175,7 @@ export function TemplateEditorSheet({
             {items.map((item, index) => (
               <div
                 key={item.id}
-                className="flex items-center gap-3 p-3 rounded-card bg-background border border-border"
+                className="flex items-center gap-3 p-3 rounded-lg bg-background border border-border"
               >
                 <span className="text-caption text-foreground-muted w-6">
                   {index + 1}.

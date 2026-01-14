@@ -65,7 +65,7 @@ export function ListItem({
         // Padding for touch targets
         'px-4 py-3',
         // Background
-        'bg-background-card rounded-card',
+        'bg-white rounded-lg',
         // Interactive states - use brown-10 for warmer hover that stands out from gray background
         isInteractive && [
           'cursor-pointer',

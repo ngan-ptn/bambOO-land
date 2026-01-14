@@ -45,7 +45,7 @@ export function EditGoalsScreen() {
       <div className="max-w-[440px] mx-auto">
         <button
           onClick={() => navigate('/profile')}
-          className="mb-6 px-4 py-2 bg-white rounded-xl shadow-sm hover:bg-gray-50 transition-colors flex items-center gap-2 text-foreground-muted"
+          className="mb-6 px-4 py-2 bg-white rounded-lg shadow-none hover:bg-gray-50 transition-colors flex items-center gap-2 text-foreground-muted"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M15 18l-6-6 6-6"/>
@@ -70,7 +70,7 @@ export function EditGoalsScreen() {
                 style={{ width: `${percentage}%` }}
               />
               <div
-                className="absolute top-1/2 -translate-y-1/2 w-7 h-7 bg-white border-3 border-primary rounded-full shadow-md pointer-events-none"
+                className="absolute top-1/2 -translate-y-1/2 w-7 h-7 bg-white border-3 border-primary rounded-full shadow-none pointer-events-none"
                 style={{ left: `${percentage}%`, transform: 'translate(-50%, -50%)' }}
               />
             </div>
@@ -96,9 +96,9 @@ export function EditGoalsScreen() {
             <button
               key={goal.key}
               onClick={() => setSelectedGoal(goal.key)}
-              className={`w-full p-5 rounded-2xl border-2 transition-all flex items-center gap-4 ${
+              className={`w-full p-5 rounded-lg border-2 transition-all flex items-center gap-4 ${
                 selectedGoal === goal.key
-                  ? 'border-primary bg-gradient-to-br from-[#F8FBF7] to-[#F0F5EE] shadow-lg'
+                  ? 'border-primary bg-emerald-50 shadow-none'
                   : 'border-border bg-white hover:border-foreground-muted'
               }`}
             >
@@ -122,7 +122,7 @@ export function EditGoalsScreen() {
 
         <button
           onClick={handleSave}
-          className="w-full h-14 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+          className="w-full h-14 bg-blue-500 text-white font-semibold rounded-lg shadow-none hover:shadow-none  transition-all flex items-center justify-center gap-2"
         >
           Lưu thay đổi
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

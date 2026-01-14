@@ -148,7 +148,7 @@ export function FoodSearchResultItem({
           className={cn(
             'w-12 h-12 shrink-0',
             'flex items-center justify-center',
-            'bg-brown-10 rounded-xl',
+            'bg-brown-10 rounded-lg',
             'text-2xl'
           )}
         >

@@ -49,8 +49,8 @@ export function CaloriesScreen() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-5 bg-gradient-to-b from-[#E8E4DE] to-[#D8D4CE]">
-      <div className="w-full max-w-[440px] bg-background rounded-3xl shadow-xl p-12">
+    <div className="min-h-screen flex items-center justify-center p-5 bg-gray-100">
+      <div className="w-full max-w-[440px] bg-background rounded-lg shadow-none p-12">
         <div className="flex justify-center gap-2 mb-8">
           <div className="w-2 h-2 rounded-full bg-primary"></div>
           <div className="w-2 h-2 rounded-full bg-primary"></div>
@@ -77,7 +77,7 @@ export function CaloriesScreen() {
                 style={{ width: `${percentage}%` }}
               />
               <div
-                className="absolute top-1/2 -translate-y-1/2 w-7 h-7 bg-white border-3 border-primary rounded-full shadow-md pointer-events-none"
+                className="absolute top-1/2 -translate-y-1/2 w-7 h-7 bg-white border-3 border-primary rounded-full shadow-none pointer-events-none"
                 style={{ left: `${percentage}%`, transform: 'translate(-50%, -50%)' }}
               />
             </div>
@@ -99,7 +99,7 @@ export function CaloriesScreen() {
 
         <button
           onClick={handleComplete}
-          className="w-full h-14 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2"
+          className="w-full h-14 bg-blue-500 text-white font-semibold rounded-lg shadow-none hover:shadow-none  transition-all flex items-center justify-center gap-2"
         >
           Hoàn thành
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

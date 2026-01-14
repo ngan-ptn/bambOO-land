@@ -58,7 +58,7 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirm, onEdit
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-10 bg-background/95 backdrop-blur-sm border-b border-border">
+      <header className="sticky top-0 z-10 bg-white border-b-2 border-gray-200">
         <div className="px-5 py-4 flex items-center justify-between gap-3">
           <button
             type="button"
@@ -103,7 +103,7 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirm, onEdit
               onClick={onManual}
               className={cn(
                 'w-full py-3 rounded-pill',
-                'bg-background-card border border-border text-foreground',
+                'bg-white border border-border text-foreground',
                 'text-body font-medium'
               )}
             >
@@ -112,7 +112,7 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirm, onEdit
           </section>
         ) : (
           <section className="space-y-4">
-            <div className="bg-background-card border border-border rounded-card p-4">
+            <div className="bg-white border border-border rounded-lg p-4">
               <p className="text-caption text-foreground-muted">Detected food</p>
               <p className="text-title text-foreground mt-1">
                 {candidateFood?.name_vi ?? 'Unknown'}
@@ -143,7 +143,7 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirm, onEdit
               disabled={!candidateFood}
               className={cn(
                 'w-full py-3 rounded-pill',
-                'bg-background-card border border-border text-foreground',
+                'bg-white border border-border text-foreground',
                 'text-body font-medium',
                 !candidateFood && 'opacity-50 cursor-not-allowed'
               )}
@@ -156,7 +156,7 @@ export function ScanResultsPage({ photoId, onCancel, onManual, onConfirm, onEdit
               onClick={onManual}
               className={cn(
                 'w-full py-3 rounded-pill',
-                'bg-background-card border border-border text-foreground',
+                'bg-white border border-border text-foreground',
                 'text-body font-medium'
               )}
             >

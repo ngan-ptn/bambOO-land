@@ -69,10 +69,10 @@ export function PasswordInput({
         onChange={handleChange}
         placeholder={placeholder}
         className={cn(
-          'w-full h-14 px-5 rounded-2xl border-2 transition-all',
-          'bg-white text-foreground placeholder:text-foreground-muted',
-          'focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/15',
-          error ? 'border-error bg-error/5' : 'border-border'
+          'w-full h-14 px-5 rounded-input border-2 transition-all duration-200',
+          'bg-gray-10 text-foreground placeholder:text-gray-40',
+          'focus:outline-none focus:bg-white focus:border-primary focus:ring-4 focus:ring-primary/15',
+          error ? 'border-error bg-error/5' : 'border-gray-20'
         )}
       />
       <button
@@ -92,8 +92,8 @@ export function PasswordInput({
               <div
                 key={bar}
                 className={cn(
-                  'flex-1 h-1 rounded-full transition-all duration-300',
-                  bar <= strength ? strengthInfo.colorClass : 'bg-border'
+                  'flex-1 h-1 rounded-full transition-all duration-200',
+                  bar <= strength ? strengthInfo.colorClass : 'bg-gray-20'
                 )}
               />
             ))}
@@ -102,7 +102,7 @@ export function PasswordInput({
           {/* Strength Label */}
           <p
             className={cn(
-              'text-caption transition-colors duration-300',
+              'text-caption transition-colors duration-200',
               strength <= 1 && 'text-error',
               strength === 2 && 'text-warning',
               strength >= 3 && 'text-primary'

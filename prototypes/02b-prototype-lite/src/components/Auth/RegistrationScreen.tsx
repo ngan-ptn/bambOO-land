@@ -58,10 +58,10 @@ export function RegistrationScreen() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-5 bg-gradient-to-b from-[#E8E4DE] to-[#D8D4CE]">
-      <div className="w-full max-w-[440px] bg-background rounded-3xl shadow-xl p-12">
+    <div className="min-h-screen flex items-center justify-center p-5 bg-background">
+      <div className="w-full max-w-[440px] bg-white rounded-card shadow-card p-12">
         <div className="text-center mb-10">
-          <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-[#F0F5EE] to-[#E8F0E6] flex items-center justify-center text-5xl">
+          <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-green-10 flex items-center justify-center text-5xl">
             🌱
           </div>
           <h1 className="text-3xl font-bold text-foreground mb-2">Tạo tài khoản</h1>
@@ -109,7 +109,7 @@ export function RegistrationScreen() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full h-14 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full h-14 bg-primary text-white font-semibold rounded-pill shadow-card hover:bg-primary-dark hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
               <>

@@ -67,8 +67,8 @@ function NoResultsState({ query, onAddCustomFood }: NoResultsStateProps) {
         className={cn(
           'flex items-center gap-2',
           'px-6 py-3',
-          'bg-background-card border border-gray-20',
-          'rounded-card shadow-card',
+          'bg-white border border-gray-20',
+          'rounded-lg shadow-none',
           'text-body text-primary font-medium',
           'hover:bg-gray-10 active:bg-gray-20',
           'transition-colors duration-150',

@@ -64,11 +64,11 @@ export function ResetPasswordScreen() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-5 bg-gradient-to-b from-[#E8E4DE] to-[#D8D4CE]">
-      <div className="w-full max-w-[440px] bg-background rounded-3xl shadow-xl p-12">
+    <div className="min-h-screen flex items-center justify-center p-5 bg-background">
+      <div className="w-full max-w-[440px] bg-white rounded-card shadow-card p-12">
         <button
           onClick={() => navigate('/login')}
-          className="mb-6 px-4 py-2 bg-white rounded-xl shadow-sm hover:bg-gray-50 transition-colors flex items-center gap-2 text-foreground-muted"
+          className="mb-6 px-4 py-2 bg-gray-10 rounded-chip shadow-tile hover:bg-gray-20 transition-all duration-200 flex items-center gap-2 text-foreground-muted"
         >
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M15 18l-6-6 6-6"/>
@@ -113,7 +113,7 @@ export function ResetPasswordScreen() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full h-14 bg-gradient-to-r from-primary to-primary-dark text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+            className="w-full h-14 bg-primary text-white font-semibold rounded-pill shadow-card hover:bg-primary-dark hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
           >
             {isSubmitting ? (
               <>
