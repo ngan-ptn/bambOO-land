@@ -17,6 +17,7 @@ import { ProfileScreen } from '@/components/Profile/ProfileScreen'
 import { EditProfileScreen } from '@/components/Profile/EditProfileScreen'
 import { EditGoalsScreen } from '@/components/Profile/EditGoalsScreen'
 import { ChangePasswordScreen } from '@/components/Profile/ChangePasswordScreen'
+import { HouseholdDashboard } from '@/components/Household'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { isAuthenticated } = useAuthContext()
@@ -95,5 +96,10 @@ export const router = createBrowserRouter([
   {
     path: '/profile/change-password',
     element: <ProtectedRoute><ChangePasswordScreen /></ProtectedRoute>,
+  },
+  // Household (CR05)
+  {
+    path: '/household',
+    element: <ProtectedRoute><HouseholdDashboard /></ProtectedRoute>,
   },
 ])

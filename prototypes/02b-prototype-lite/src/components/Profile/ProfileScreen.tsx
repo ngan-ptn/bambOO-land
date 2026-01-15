@@ -1,15 +1,19 @@
 /**
  * ProfileScreen - View and navigate to edit screens
+ * CR05: Includes Household section for managing household members
  */
 
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuthContext } from '@/auth/AuthContext'
+import { useHousehold } from '@/contexts/HouseholdContext'
 import { LogoutModal } from '@/components/Auth/LogoutModal'
+import { BottomNav } from '@/components/common'
 
 export function ProfileScreen() {
   const navigate = useNavigate()
   const { user, profile } = useAuthContext()
+  const { members } = useHousehold()
   const [showLogoutModal, setShowLogoutModal] = useState(false)
 
   if (!user) {
@@ -56,6 +60,53 @@ export function ProfileScreen() {
           </div>
         </div>
 
+        {/* Household Section (CR05) */}
+        <div className="bg-white rounded-card shadow-card overflow-hidden mb-6">
+          <div className="p-4 border-b border-border">
+            <h2 className="font-semibold text-foreground flex items-center gap-2">
+              <span className="text-xl">👥</span> Household
+            </h2>
+          </div>
+          {members.map((member, index) => (
+            <button
+              key={member.id}
+              className={`w-full p-4 flex items-center gap-3 hover:bg-gray-10 transition-colors ${
+                index < members.length - 1 ? 'border-b border-border' : ''
+              }`}
+            >
+              <div
+                className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold"
+                style={{ backgroundColor: member.avatarColor }}
+              >
+                {member.name.charAt(0).toUpperCase()}
+              </div>
+              <div className="flex-1 text-left">
+                <div className="font-medium text-foreground flex items-center gap-2">
+                  {member.name}
+                  {member.isActive && (
+                    <span className="text-xs px-2 py-0.5 bg-primary/10 text-primary rounded-full">
+                      Active
+                    </span>
+                  )}
+                </div>
+                <div className="text-sm text-foreground-muted">
+                  {member.goals.kcal.toLocaleString()} kcal/ngày
+                </div>
+              </div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-foreground-muted">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+          ))}
+          <button
+            className="w-full p-4 flex items-center justify-center gap-2 text-primary hover:bg-gray-10 transition-colors border-t border-border"
+          >
+            <span className="text-lg">+</span>
+            <span className="font-medium">Add member</span>
+          </button>
+        </div>
+
+        {/* Account Section */}
         <div className="bg-white rounded-card shadow-card overflow-hidden mb-6">
           <button
             onClick={() => navigate('/profile/edit')}
@@ -99,7 +150,13 @@ export function ProfileScreen() {
         </button>
 
         <LogoutModal isOpen={showLogoutModal} onClose={() => setShowLogoutModal(false)} />
+
+        {/* Spacer for bottom nav */}
+        <div className="h-20" />
       </div>
+
+      {/* Bottom Navigation */}
+      <BottomNav />
     </div>
   )
 }

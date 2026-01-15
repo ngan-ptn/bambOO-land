@@ -145,3 +145,38 @@ export interface AuthContextValue {
   changePassword: (currentPassword: string, newPassword: string) => boolean
   resetPassword: (email: string, newPassword: string) => boolean
 }
+
+// Household Multi-User Types (CR05)
+
+export interface HouseholdMember {
+  id: string
+  name: string
+  avatarColor: string      // hex color for ring/avatar background
+  goals: {
+    kcal: number
+    protein: number
+    carbs: number
+    fat: number
+  }
+  isActive: boolean        // currently selected profile
+  todayKcal?: number       // cached today's consumption
+  todayProgress?: number   // percentage 0-100
+}
+
+export type MealSplitType = 'full' | 'equal'
+
+export interface MealAttribution {
+  eaters: string[]         // array of member IDs who ate this
+  splitType: MealSplitType // how calories are attributed
+}
+
+export interface HouseholdContextValue {
+  members: HouseholdMember[]
+  activeMember: HouseholdMember | null
+  isLoading: boolean
+  addMember: (member: Omit<HouseholdMember, 'id' | 'isActive' | 'todayKcal' | 'todayProgress'>) => void
+  updateMember: (id: string, updates: Partial<HouseholdMember>) => void
+  removeMember: (id: string) => void
+  switchToMember: (id: string) => void
+  refreshMemberStats: () => void
+}

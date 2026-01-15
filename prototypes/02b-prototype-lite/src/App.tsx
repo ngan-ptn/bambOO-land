@@ -14,9 +14,11 @@ import { ManualEntryPage } from '@/components/ManualEntry/ManualEntryPage'
 import { ScanCameraPage } from '@/components/Scan/ScanCameraPage'
 import { ScanResultsPage } from '@/components/Scan/ScanResultsPage'
 import { PortionPicker } from '@/components/QuickAdd/PortionPicker'
-import { Toast } from '@/components/common'
+import { ProfileSwitcher } from '@/components/Household'
+import { Toast, BottomNav } from '@/components/common'
 import { useDatabaseStorage, useDatabaseContext } from '@/hooks'
 import { useAuthContext } from '@/auth/AuthContext'
+import { useHousehold } from '@/contexts/HouseholdContext'
 import { logManualEntry } from '@/services/quick-add-service'
 import { cn } from '@/lib/utils'
 import { appNavReducer, initialAppNavState } from '@/lib/appNav'
@@ -45,8 +47,12 @@ function App() {
   const navigate = useNavigate()
   const { user } = useAuthContext()
   const { currentUser } = useDatabaseContext()
+  const { activeMember } = useHousehold()
   const { addFood, removeLog, isLoading } = useDatabaseStorage()
   const [nav, dispatchNav] = useReducer(appNavReducer, undefined, initialAppNavState)
+
+  // Profile switcher state (CR05)
+  const [isProfileSwitcherOpen, setIsProfileSwitcherOpen] = useState(false)
 
   // Portion picker state for scan results flow (QuickAddPage manages its own)
   const [selectedFood, setSelectedFood] = useState<FoodItem | null>(null)
@@ -343,21 +349,44 @@ function App() {
     // Shell container keeps the main Quick Add UI pinned to 1000px width,
     // so opening bottom sheets cannot visually shrink the dashboard behind.
     <div className="max-w-[1000px] mx-auto">
-      {/* User header with profile button */}
+      {/* User header with profile switcher (CR05) */}
       <header className="px-4 pt-6 pb-4 flex items-center justify-between">
-        <div>
-          <h2 className="text-xl font-bold text-foreground">
-            Chào, {currentUser?.displayName || user?.name || 'Bạn'}! 👋
-          </h2>
-          <p className="text-sm text-foreground-muted">Hôm nay bạn ăn gì?</p>
+        <div className="flex items-center gap-3">
+          {/* Avatar button - opens profile switcher */}
+          <button
+            onClick={() => setIsProfileSwitcherOpen(true)}
+            className="w-12 h-12 rounded-full text-white font-bold text-lg flex items-center justify-center shadow-card hover:scale-105 transition-transform"
+            style={{ backgroundColor: activeMember?.avatarColor || '#6B7F42' }}
+            aria-label="Switch profile"
+          >
+            {activeMember?.name?.charAt(0).toUpperCase() || user?.avatar || '👤'}
+          </button>
+          <div>
+            <h2 className="text-xl font-bold text-foreground">
+              Chào, {activeMember?.name || currentUser?.displayName || user?.name || 'Bạn'}! 👋
+            </h2>
+            <p className="text-sm text-foreground-muted">Hôm nay bạn ăn gì?</p>
+          </div>
         </div>
+        {/* Settings button */}
         <button
           onClick={() => navigate('/profile')}
-          className="w-11 h-11 rounded-full bg-gradient-to-br from-primary to-primary-dark text-white font-bold flex items-center justify-center shadow-card hover:shadow-card transition-all"
+          className="w-10 h-10 rounded-full bg-brown-20 text-foreground-muted flex items-center justify-center hover:bg-brown-30 transition-colors"
+          aria-label="Settings"
         >
-          {user?.avatar || '👤'}
+          ⚙️
         </button>
       </header>
+
+      {/* Profile Switcher Bottom Sheet (CR05) */}
+      <ProfileSwitcher
+        isOpen={isProfileSwitcherOpen}
+        onClose={() => setIsProfileSwitcherOpen(false)}
+        onAddMember={() => {
+          setIsProfileSwitcherOpen(false)
+          // TODO: Navigate to add member page
+        }}
+      />
 
       <QuickAddPage />
 
@@ -401,6 +430,12 @@ function App() {
         onUndo={handleUndo}
         onEdit={handleEdit}
       />
+
+      {/* Bottom Navigation (CR05) */}
+      <BottomNav />
+
+      {/* Spacer for bottom nav */}
+      <div className="h-20" />
     </div>
   )
 }
